@@ -1,0 +1,14 @@
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\MmsDb.dll.config
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\MmsDb.dll
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\MmsDb.pdb
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\EntityFramework.dll
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\EntityFramework.xml
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\obj\Debug\MmsDb.dll
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\obj\Debug\MmsDb.pdb
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\Ninject.dll
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\Ninject.xml
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\obj\Debug\MmsDb.csprojResolveAssemblyReference.cache
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\Ninject.Web.Common.dll
+c:\Users\irmaka\documents\visual studio 2015\Projects\MmsApi\MmsDb\bin\Debug\Ninject.Web.Common.xml
