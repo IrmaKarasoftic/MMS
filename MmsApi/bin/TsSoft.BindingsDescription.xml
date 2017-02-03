@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TsSoft.BindingsDescription</name>
+    </assembly>
+    <members>
+        <member name="T:TsSoft.BindingsDescription.AssemblyRetriever">
+            <summary>
+            Получает сборки-зависимости, включая непрямые
+            </summary>
+        </member>
+        <member name="T:TsSoft.BindingsDescription.IAssemblyRetriever">
+            <summary>
+            Получает все сборки-зависимости, включая непрямые
+            </summary>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.IAssemblyRetriever.GetAssembliesWithReferences(System.Collections.Generic.IEnumerable{System.Type},System.Func{System.Reflection.AssemblyName,System.Boolean})">
+            <summary>
+            Получить сборки-зависимости, включая непрямые
+            </summary>
+            <param name="tssoftTypes">Непосредственно используемые библиотечные типы</param>
+            <param name="shouldLoad">Предикат</param>
+            <returns>Коллекция сборок-зависимостей</returns>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.AssemblyRetriever.GetAssembliesWithReferences(System.Collections.Generic.IEnumerable{System.Type},System.Func{System.Reflection.AssemblyName,System.Boolean})">
+            <summary>
+            Получить сборки-зависимости, включая непрямые
+            </summary>
+            <param name="tssoftTypes">Непосредственно используемые библиотечные типы</param>
+            <param name="shouldLoad">Предикат</param>
+            <returns>Коллекция сборок-зависимостей</returns>
+        </member>
+        <member name="T:TsSoft.BindingsDescription.BinderBase">
+            <summary>
+            Базовый класс для связывания интерфейсов с реализациями
+            </summary>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BinderBase.#ctor(TsSoft.BindingsDescription.IBindingsRetriever,TsSoft.BindingsDescription.IAssemblyRetriever)">
+            <summary>
+            Базовый класс для связывания интерфейсов с реализациями
+            </summary>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BinderBase.Add``1">
+            <summary>
+            Добавить связи интерфейсов со стандартными реализациями
+            </summary>
+            <typeparam name="T">Тип-описание связей интерфейсов со стандартными реализациями</typeparam>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BinderBase.AddWithDependencies``1">
+            <summary>
+            Добавить связи интерфейсов со стандартными реализациями, описанные в классе связей, а также в сборках, от которых зависит его сборка
+            </summary>
+            <typeparam name="T">Тип-описание связей интерфейсов со стандартными реализациями</typeparam>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BinderBase.AddByUsedTypes(System.Collections.Generic.IEnumerable{System.Type},System.Func{System.Reflection.AssemblyName,System.Boolean})">
+            <summary>
+            Добавить связи интерфейсов со стандартными реализациями из сборок с указанными типами и их зависимостей
+            </summary>
+            <param name="types">Типы, связи из сборок с которыми нужно загрузить</param>
+            <param name="shouldLoad">Какие зависимые сборки грузить</param>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BinderBase.AddFromAssemblies(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+            Добавить связи интерфейсов со стандартными реализациями из сборок с указанными типами и их зависимостей
+            </summary>
+            <param name="assemblies">Сборки, связи из которых нужно загрузить</param>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BinderBase.Except``1">
+            <summary>
+            Исключить связь интерфейса
+            </summary>
+            <typeparam name="T">Исключаемый интерфейс</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BinderBase.Bind(System.Action{System.Collections.Generic.KeyValuePair{System.Type,System.Type}})">
+            <summary>
+            Осуществить связывание
+            </summary>
+            <param name="bindSingle">Функция, осуществляющая связывание одного типа</param>
+        </member>
+        <member name="T:TsSoft.BindingsDescription.BindingsDescription">
+            <summary>
+            Описание интерфейсов и их реализаций в сборке
+            </summary>
+        </member>
+        <member name="T:TsSoft.BindingsDescription.IBindingsDescription">
+            <summary>
+            Описание интерфейсов и их стандартных реализаций в сборке
+            </summary>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.IBindingsDescription.GetBindings">
+            <summary>
+            Получить описание интерфейсов и их стандартных реализаций
+            </summary>
+            <returns>Список пар интерфейс-реализация</returns>
+        </member>
+        <member name="F:TsSoft.BindingsDescription.BindingsDescription.Bindings">
+            <summary>
+            Описание интерфейсов и их реализаций в сборке
+            </summary>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BindingsDescription.Bind``2">
+            <summary>
+            Добавить интерфейс и его стандартную реализацию
+            </summary>
+            <typeparam name="TInterface">Тип-интерфейс</typeparam>
+            <typeparam name="TImplementation">Тип-реализация по умолчанию</typeparam>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BindingsDescription.GetBindings">
+            <summary>
+            Получить интерфейсы и их реализации
+            </summary>
+            <returns>Список интерфейсов и их реализаций</returns>
+        </member>
+        <member name="T:TsSoft.BindingsDescription.BindingsRetriever">
+            <summary>
+            Получает описание интерфейсов и их реализаций из сборок
+            </summary>
+        </member>
+        <member name="T:TsSoft.BindingsDescription.IBindingsRetriever">
+            <summary>
+            Получает описание интерфейсов и их реализаций из сборок
+            </summary>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.IBindingsRetriever.GetBindings(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+            Получить описание интерфейсов и их реализаций из сборок
+            </summary>
+            <param name="assemblies">Анализируемые сборки</param>
+            <returns>Множество интерфейсов и их реализаций</returns>
+        </member>
+        <member name="M:TsSoft.BindingsDescription.BindingsRetriever.GetBindings(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+            Получить описание интерфейсов и их реализаций из сборок
+            </summary>
+            <param name="assemblies">Сборки</param>
+            <returns>Множество интерфейсов и их реализаций</returns>
+        </member>
+    </members>
+</doc>

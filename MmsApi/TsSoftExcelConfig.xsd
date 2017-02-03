@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="excelGeneratorConfiguration" nillable="true" type="ExcelConfig" />
+  <xs:complexType name="ExcelConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="model" type="ExcelModelConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExcelModelConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="sheetName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="sheetNameProperty" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="parts" type="ArrayOfExcelPropertyConfig" />
+      <xs:element minOccurs="0" maxOccurs="1" name="removeParts" type="ArrayOfExcelRemovedPropertyConfig" />
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfExcelPropertyConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="part" nillable="true" type="ExcelPropertyConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExcelPropertyConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="multiCell" type="ExcelMultiCellAttribute" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dictionary" type="ExcelDictionaryAttribute" />
+        <xs:element minOccurs="0" maxOccurs="1" name="row" type="ExcelRowAttribute" />
+        <xs:element minOccurs="0" maxOccurs="1" name="tableCell" type="ExcelTableCellAttribute" />
+        <xs:element minOccurs="0" maxOccurs="1" name="table" type="ExcelTableAttribute" />
+        <xs:element minOccurs="0" maxOccurs="1" name="heap" type="ExcelHeapAttribute" />
+        <xs:element minOccurs="0" maxOccurs="1" name="customPart" type="ExcelCustomPartAttribute" />
+        <xs:element minOccurs="0" maxOccurs="1" name="cell" type="ExcelCellAttribute" />
+        <xs:element minOccurs="0" maxOccurs="1" name="container" type="ExcelPartAttribute" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="appearance" type="ExcelAppearanceConfig" />
+      <xs:element minOccurs="0" maxOccurs="1" name="parts" type="ArrayOfExcelPropertyConfig" />
+      <xs:element minOccurs="0" maxOccurs="1" name="removeParts" type="ArrayOfExcelRemovedPropertyConfig" />
+    </xs:sequence>
+    <xs:attribute name="property" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ExcelMultiCellAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ExcelTableCellAttribute" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExcelTableCellAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ExcelCellAttribute">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="WithoutHeader" type="xs:boolean" />
+        </xs:sequence>
+        <xs:attribute name="cellStylizer" type="xs:string" />
+        <xs:attribute name="cellRangeProcessor" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExcelCellAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ExcelPartAttribute" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExcelPartAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Attribute">
+        <xs:attribute name="description" type="xs:string" />
+        <xs:attribute default="0" name="order" type="xs:int" />
+        <xs:attribute name="stylizer" type="xs:string" />
+        <xs:attribute name="headerStylizer" type="xs:string" />
+        <xs:attribute name="rangeProcessor" type="xs:string" />
+        <xs:attribute name="headerRangeProcessor" type="xs:string" />
+        <xs:attribute name="valueFormatter" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Attribute" abstract="true" />
+  <xs:complexType name="PaddingAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Attribute">
+        <xs:attribute name="top" type="xs:int" use="required" />
+        <xs:attribute name="bottom" type="xs:int" use="required" />
+        <xs:attribute name="left" type="xs:int" use="required" />
+        <xs:attribute name="right" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MarginAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Attribute">
+        <xs:attribute name="top" type="xs:int" use="required" />
+        <xs:attribute name="bottom" type="xs:int" use="required" />
+        <xs:attribute name="left" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StyleAttributeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Attribute" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FormatAttributeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StyleAttributeBase">
+        <xs:attribute name="numberFormat" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeaderFormatAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FormatAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FormatAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FormatAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FontAttributeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StyleAttributeBase">
+        <xs:attribute name="bold" type="xs:boolean" use="required" />
+        <xs:attribute name="italic" type="xs:boolean" use="required" />
+        <xs:attribute name="underline" type="xs:boolean" use="required" />
+        <xs:attribute name="strike" type="xs:boolean" use="required" />
+        <xs:attribute name="name" type="xs:string" />
+        <xs:attribute name="size" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FontAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FontAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeaderFontAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FontAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VerticalAlignAttributeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StyleAttributeBase">
+        <xs:attribute name="alignment" type="ExcelVerticalAlignment" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ExcelVerticalAlignment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Top" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Bottom" />
+      <xs:enumeration value="Distributed" />
+      <xs:enumeration value="Justify" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VerticalAlignAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="VerticalAlignAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeaderVerticalAlignAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="VerticalAlignAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutoFitAttributeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StyleAttributeBase">
+        <xs:attribute name="type" type="AutoFitType" use="required" />
+        <xs:attribute name="minWidth" type="xs:double" use="required" />
+        <xs:attribute name="minHeight" type="xs:double" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AutoFitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="StretchColumns" />
+      <xs:enumeration value="WrapText" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HeaderAutoFitAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutoFitAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutoFitAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutoFitAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ColorAttributeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StyleAttributeBase">
+        <xs:attribute name="red" type="xs:int" use="required" />
+        <xs:attribute name="green" type="xs:int" use="required" />
+        <xs:attribute name="blue" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FontColorAttributeBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ColorAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeaderFontColorAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FontColorAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FontColorAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FontColorAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BackgroundColorAttributeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ColorAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeaderBackgroundColorAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BackgroundColorAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BackgroundColorAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BackgroundColorAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BorderAttributeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ColorAttributeBase">
+        <xs:attribute name="style" type="ExcelBorderStyle" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ExcelBorderStyle">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Hair" />
+      <xs:enumeration value="Dotted" />
+      <xs:enumeration value="DashDot" />
+      <xs:enumeration value="Thin" />
+      <xs:enumeration value="DashDotDot" />
+      <xs:enumeration value="Dashed" />
+      <xs:enumeration value="MediumDashDotDot" />
+      <xs:enumeration value="MediumDashed" />
+      <xs:enumeration value="MediumDashDot" />
+      <xs:enumeration value="Thick" />
+      <xs:enumeration value="Medium" />
+      <xs:enumeration value="Double" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HeaderBorderAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BorderAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BorderAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BorderAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BorderCellAttributeBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BorderAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BorderCellAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BorderCellAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeaderBorderCellAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BorderCellAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlignAttributeBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StyleAttributeBase">
+        <xs:attribute name="alignment" type="ExcelHorizontalAlignment" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ExcelHorizontalAlignment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="General" />
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="CenterContinuous" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="Fill" />
+      <xs:enumeration value="Distributed" />
+      <xs:enumeration value="Justify" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HeaderAlignAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AlignAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlignAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AlignAttributeBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExcelCustomPartAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ExcelPartAttribute">
+        <xs:attribute name="customGenerator" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExcelHeapAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ExcelPartAttribute">
+        <xs:attribute name="innerMargin" type="xs:int" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExcelTableAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ExcelPartAttribute">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="rowStylizers" type="ArrayOfString" />
+          <xs:element minOccurs="0" maxOccurs="1" name="rowRangeProcessors" type="ArrayOfString1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="rowStylizer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="rowRangeProcessor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExcelRowAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ExcelPartAttribute" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExcelDictionaryAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ExcelPartAttribute">
+        <xs:attribute name="withNullValues" type="xs:boolean" use="required" />
+        <xs:attribute name="withEmptyStrings" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExcelAppearanceConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="style" type="ArrayOfChoice1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="margin" type="MarginAttribute" />
+      <xs:element minOccurs="0" maxOccurs="1" name="padding" type="PaddingAttribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfChoice1">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="1" maxOccurs="1" name="borderCell" nillable="true" type="BorderCellAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="format" nillable="true" type="FormatAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="autoFit" nillable="true" type="AutoFitAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="headerBorder" nillable="true" type="HeaderBorderAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="headerFormat" nillable="true" type="HeaderFormatAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="headerAutoFit" nillable="true" type="HeaderAutoFitAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="border" nillable="true" type="BorderAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="headerAlign" nillable="true" type="HeaderAlignAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="backgroundColor" nillable="true" type="BackgroundColorAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="font" nillable="true" type="FontAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="headerBackgroundColor" nillable="true" type="HeaderBackgroundColorAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="headerFont" nillable="true" type="HeaderFontAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="headerVerticalAlign" nillable="true" type="HeaderVerticalAlignAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="fontColor" nillable="true" type="FontColorAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="verticalAlign" nillable="true" type="VerticalAlignAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="headerBorderCell" nillable="true" type="HeaderBorderCellAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="headerFontColor" nillable="true" type="HeaderFontColorAttribute" />
+      <xs:element minOccurs="1" maxOccurs="1" name="align" nillable="true" type="AlignAttribute" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfExcelRemovedPropertyConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="part" nillable="true" type="ExcelRemovedPropertyConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExcelRemovedPropertyConfig">
+    <xs:attribute name="property" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

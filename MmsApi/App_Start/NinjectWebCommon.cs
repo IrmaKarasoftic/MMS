@@ -64,6 +64,6 @@ namespace MmsApi.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind(typeof(Interface<>)).To(typeof(Repository<>)).WithConstructorArgument(typeof(DbContext), new AppContext());
-        }        
+        }
     }
 }

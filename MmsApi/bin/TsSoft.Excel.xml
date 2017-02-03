@@ -1,0 +1,2571 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TsSoft.Excel</name>
+    </assembly>
+    <members>
+        <member name="T:TsSoft.Excel.Attributes.AlignAttributeBase">
+            <summary>
+            Задать горизонтальное выравнивание значениям
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.StyleAttributeBase">
+            <summary>
+            Базовый атрибут для описания стилей
+            </summary>
+        </member>
+        <member name="F:TsSoft.Excel.Attributes.StyleAttributeBase.ForHeader">
+            <summary>
+            Применять к заголовкам или к обычным ячейкам
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.StyleAttributeBase.IsForHeader">
+            <summary>
+            Применять к заголовкам или к обычным ячейкам
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.AlignAttributeBase.#ctor">
+            <summary>
+            Задать горизонтальное выравнивание значениям
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.AlignAttributeBase.#ctor(OfficeOpenXml.Style.ExcelHorizontalAlignment)">
+            <summary>
+            Задать горизонтальное выравнивание значениям
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.AlignAttributeBase.Alignment">
+            <summary>
+            Выравнивание
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.AlignAttribute">
+            <summary>
+            Задать горизонтальное выравнивание значениям
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.AlignAttribute.#ctor(OfficeOpenXml.Style.ExcelHorizontalAlignment)">
+            <summary>
+            Задать горизонтальное выравнивание значениям
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.HeaderAlignAttribute">
+            <summary>
+            Задать горизонтальное выравнивание заголовкам
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.HeaderAlignAttribute.#ctor(OfficeOpenXml.Style.ExcelHorizontalAlignment)">
+            <summary>
+            Задать горизонтальное выравнивание заголовкам
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.AutoFitType">
+            <summary>
+            Возможные типы подгона размера ячейки под содержимое
+            </summary>
+        </member>
+        <member name="F:TsSoft.Excel.Attributes.AutoFitType.None">
+            <summary>
+            Не подгонять
+            </summary>
+        </member>
+        <member name="F:TsSoft.Excel.Attributes.AutoFitType.StretchColumns">
+            <summary>
+            Расширить столбец
+            </summary>
+        </member>
+        <member name="F:TsSoft.Excel.Attributes.AutoFitType.WrapText">
+            <summary>
+            Переносить по словам
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.AutoFitAttributeBase">
+            <summary>
+            Автоматически подогнать размер ячейки под содержимое (по значениям содержимого)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.AutoFitAttributeBase.#ctor">
+            <summary>
+            Автоматически подогнать размер ячейки под содержимое (по значениям содержимого)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.AutoFitAttributeBase.#ctor(TsSoft.Excel.Attributes.AutoFitType)">
+            <summary>
+            Автоматически подогнать размер ячейки под содержимое (по значениям содержимого)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.AutoFitAttributeBase.Type">
+            <summary>
+            Тип подгона размера
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.AutoFitAttributeBase.MinWidth">
+            <summary>
+            Минимально возможная ширина (в пунктах)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.AutoFitAttributeBase.MinHeight">
+            <summary>
+            Минимально возможная высота (в пунктах)
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.AutoFitAttribute">
+            <summary>
+            Автоматически подогнать размер ячейки под содержимое (по значениям содержимого)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.AutoFitAttribute.#ctor(TsSoft.Excel.Attributes.AutoFitType)">
+            <summary>
+            Автоматически подогнать размер ячейки под содержимое (по значениям содержимого)
+            </summary>
+            <param name="type">Тип подгона размера</param>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.HeaderAutoFitAttribute">
+            <summary>
+            Автоматически подогнать размер ячейки под содержимое (по заголовкам содержимого)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.HeaderAutoFitAttribute.#ctor(TsSoft.Excel.Attributes.AutoFitType)">
+            <summary>
+            Автоматически подогнать размер ячейки под содержимое (по заголовкам содержимого)
+            </summary>
+            <param name="type">Тип подгона размера</param>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.BackgroundColorAttributeBase">
+            <summary>
+            Задать цвет фона
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ColorAttributeBase">
+            <summary>
+            Базовый атрибут для задания цвета
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.ColorAttributeBase.ToColor">
+            <summary>
+            Получить цвет
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ColorAttributeBase.Red">
+            <summary>
+            R
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ColorAttributeBase.Green">
+            <summary>
+            G
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ColorAttributeBase.Blue">
+            <summary>
+            B
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.BackgroundColorAttribute">
+            <summary>
+            Задать цвет фона
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.HeaderBackgroundColorAttribute">
+            <summary>
+            Задать цвет фона для заголовка
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.HeaderBackgroundColorAttribute.#ctor">
+            <summary>
+            Задать цвет фона для заголовка
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.BorderAttributeBase">
+            <summary>
+            Задать границу ячеек
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.BorderAttributeBase.#ctor">
+            <summary>
+            Задать границу ячеек
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.BorderAttributeBase.Style">
+            <summary>
+            Стиль границы ячеек
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.BorderCellAttributeBase">
+            <summary>
+            Задать границу ячеек (включая вложенные)
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.BorderCellAttribute">
+            <summary>
+            Задать границу ячеек (включая вложенные)
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.HeaderBorderCellAttribute">
+            <summary>
+            Задать границу ячеек (включая вложенные) (для заголовков)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.HeaderBorderCellAttribute.#ctor">
+            <summary>
+            Задать границу ячеек (для заголовков)
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.BorderAttribute">
+            <summary>
+            Задать границу ячеек
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.HeaderBorderAttribute">
+            <summary>
+            Задать границу ячеек (для заголовков)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.HeaderBorderAttribute.#ctor">
+            <summary>
+            Задать границу ячеек (для заголовков)
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelCellAttribute">
+            <summary>
+            Атрибут для обозначения ячейки. При задании Description или при присутствии DescriptionAttribute
+            выведет это в заголовок для <see cref="T:TsSoft.Excel.Attributes.ExcelTableAttribute"/> или <see cref="T:TsSoft.Excel.Attributes.ExcelDictionaryAttribute"/>
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelPartAttribute">
+            <summary>
+            Основной атрибут, отвечающий за рендер части документа,
+            все атрибуты частей (<see cref="T:TsSoft.Excel.Attributes.ExcelTableAttribute"/>, <see cref="T:TsSoft.Excel.Attributes.ExcelCellAttribute"/>, <see cref="T:TsSoft.Excel.Attributes.ExcelDictionaryAttribute"/>) 
+            его наследуют
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.Stylizer">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.Stylizers.IStylizer"/>.
+            Применяется ко всему диапазону ячеек-значений
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.HeaderStylizer">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.Stylizers.IStylizer"/>.
+            Применяется ко всему диапазону ячеек-заголовков
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.RangeProcessor">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.RangeProcessors.IRangeProcessor"/>.
+            Применяется ко всему диапазону ячеек-значений
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.HeaderRangeProcessor">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.RangeProcessors.IRangeProcessor"/>.
+            Применяется ко всему диапазону ячеек-заголовков
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.Description">
+            <summary>
+            Описание. Выводится как заголовок
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.ValueFormatter">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.Formatters.IValueFormatter"/>.
+            Применяется к значению перед вставкой
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.Order">
+            <summary>
+            Порядок части в контейнере
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.StylizerString">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.Stylizers.IStylizer"/>.
+            Применяется ко всему диапазону ячеек-значений
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.HeaderStylizerString">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.Stylizers.IStylizer"/>.
+            Применяется ко всему диапазону ячеек-заголовков
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.RangeProcessorString">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.RangeProcessors.IRangeProcessor"/>.
+            Применяется ко всему диапазону ячеек-значений
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.HeaderRangeProcessorString">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.RangeProcessors.IRangeProcessor"/>.
+            Применяется ко всему диапазону ячеек-заголовков
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelPartAttribute.ValueFormatterString">
+            <summary>
+            Тип, реализующий <see cref="T:TsSoft.Excel.Formatters.IValueFormatter"/>.
+            Применяется к значению перед вставкой
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelCustomPartAttribute">
+            <summary>
+                Часть для рендера с кастомным генератором
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelCustomPartAttribute.CustomGenerator">
+            <summary>
+                Тип генератора, обязательно реализующий <see cref="T:TsSoft.Excel.Generators.PartGenerators.ICustomGenerator"/>
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelCustomPartAttribute.CustomGeneratorString">
+            <summary>
+                Тип генератора, обязательно реализующий <see cref="T:TsSoft.Excel.Generators.PartGenerators.ICustomGenerator"/>
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelDictionaryAttribute">
+            <summary>
+            Рендер модели как словаря значаний
+            Ключ1    Значение1
+            Ключ2    Значение2
+            Ключ3    Значение3
+            где ключи - это заголовок в <see cref="T:TsSoft.Excel.Attributes.ExcelCellAttribute"/>, а значение - 
+            значения соответствующих свойств
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelDictionaryAttribute.WithNullValues">
+            <summary>
+            Рендерить ли заголовок для null-значений
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelDictionaryAttribute.WithEmptyStrings">
+            <summary>
+            Рендерить ли заголовок, если значение - пустая строка
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelHeapAttribute">
+            <summary>
+            Вывод коллекции, как столбца
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelHeapAttribute.InnerMargin">
+            <summary>
+            Отступ между элементами коллекции
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelModelAttribute">
+            <summary>
+            Разметка для класса модели,
+            отвечает за глобальные настройки книги и всего диапазона затронутых ячеек
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelModelAttribute.SheetName">
+            <summary>
+            Имя книги Excel
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelMultiCellAttribute">
+            <summary>
+            Атрибут для обозначения ячеек с общей частью заголовка. При задании Description или при присутствии DescriptionAttribute
+            выведет это в заголовок для <see cref="T:TsSoft.Excel.Attributes.ExcelTableAttribute"/>
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelTableCellAttribute">
+            <summary>
+            Атрибут для обозначения ячеек со стилизацией. При задании Description или при присутствии DescriptionAttribute
+            выведет это в заголовок для <see cref="T:TsSoft.Excel.Attributes.ExcelTableAttribute"/>
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelTableCellAttribute.WithoutHeader">
+            <summary>
+            Отключить генерацию заголовка для ячейки таблицы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelTableCellAttribute.CellStylizer">
+            <summary>
+            Стилизатор отдельной ячейки внутри строки таблицы, должен реализовать <see cref="T:TsSoft.Excel.Stylizers.ITableRowStylizer`1"/>, где T - тип модели для строки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelTableCellAttribute.CellRangeProcessor">
+            <summary>
+            Обработчик отдельной ячейки внутри строки таблицы, должен реализовать <see cref="T:TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor`1"/>, где T - тип модели для строки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelTableCellAttribute.CellStylizerString">
+            <summary>
+            Стилизатор отдельной ячейки внутри строки таблицы, должен реализовать <see cref="T:TsSoft.Excel.Stylizers.ITableRowStylizer`1"/>, где T - тип модели для строки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelTableCellAttribute.CellRangeProcessorString">
+            <summary>
+            Обработчик отдельной ячейки внутри строки таблицы, должен реализовать <see cref="T:TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor`1"/>, где T - тип модели для строки
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelRowAttribute">
+            <summary>
+            Вывод одной сущности, как строки
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelTableAttribute">
+            <summary>
+            Вывод коллекции в виде таблицы
+            </summary>
+        </member>
+        <member name="F:TsSoft.Excel.Attributes.ExcelTableAttribute.RowStylizers">
+            <summary>
+            Стилизаторы строк, должны реализовать <see cref="T:TsSoft.Excel.Stylizers.ITableRowStylizer`1"/>
+            </summary>
+        </member>
+        <member name="F:TsSoft.Excel.Attributes.ExcelTableAttribute.RowRangeProcessors">
+            <summary>
+            Обработчики строк, должны реализовать <see cref="T:TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor`1"/>
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.ExcelTableAttribute.#ctor">
+            <summary>
+            Таблица
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.ExcelTableAttribute.#ctor(System.Type[])">
+            <summary>
+            Таблица со стилизаторами по строкам, которые должны реализовать <see cref="T:TsSoft.Excel.Stylizers.ITableRowStylizer`1"/>
+            </summary>
+            <param name="rowStylizers">Типы стилизаторов</param>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelTableAttribute.RowStylizerStrings">
+            <summary>
+            Стилизаторы строк, должны реализовать <see cref="T:TsSoft.Excel.Stylizers.ITableRowStylizer`1"/>
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelTableAttribute.RowRangeProcessorStrings">
+            <summary>
+            Обработчики строк, должны реализовать <see cref="T:TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor`1"/>
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelWorksheetAttribute">
+            <summary>
+            Указывает, что по содержимому свойства нужно сгенерировать лист Excel
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelWorksheetAttribute.Order">
+            <summary>
+            Порядковый номер листа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.ExcelWorksheetAttribute.Name">
+            <summary>
+            Имя листа
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.ExcelWorksheetNameAttribute">
+            <summary>
+            Задаёт имя Excel-листа через свойство Excel-модели верхнего уровня
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.FontAttributeBase">
+            <summary>
+            Задать настройки шрифта
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.FontAttributeBase.#ctor">
+            <summary>
+            Задать настройки шрифта
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.FontAttributeBase.Bold">
+            <summary>
+            Жирный
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.FontAttributeBase.Italic">
+            <summary>
+            Курсив
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.FontAttributeBase.Underline">
+            <summary>
+            Подчёркнутый
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.FontAttributeBase.Strike">
+            <summary>
+            Зачёркнутый
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.FontAttributeBase.Name">
+            <summary>
+            Наименование шрифта (FontFamily)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.FontAttributeBase.Size">
+            <summary>
+            Размер шрифта
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.FontAttribute">
+            <summary>
+            Задать настройки шрифта
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.HeaderFontAttribute">
+            <summary>
+            Задать настройки шрифта для заголовка
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.HeaderFontAttribute.#ctor">
+            <summary>
+            Задать настройки шрифта для заголовка
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.FontColorAttributeBase">
+            <summary>
+            Задать цвет шрифта
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.FontColorAttribute">
+            <summary>
+            Задать цвет шрифта
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.HeaderFontColorAttribute">
+            <summary>
+            Задать цвет шрифта (для заголовка)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.HeaderFontColorAttribute.#ctor">
+            <summary>
+            Задать цвет шрифта (для заголовка)
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.FormatAttributeBase">
+            <summary>
+            Выбор формата отображения ячейки или диапазона
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.FormatAttributeBase.Format">
+            <summary>
+            Формат отображения ячейки
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.FormatAttribute">
+            <summary>
+            Выбор формата отображения ячейки или диапазона
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.FormatAttribute.#ctor(System.String)">
+            <summary>
+            Выбор формата отображения ячейки или диапазона
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.HeaderFormatAttribute">
+            <summary>
+            Выбор формата отображения ячейки или диапазона (для заголовка)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.HeaderFormatAttribute.#ctor(System.String)">
+            <summary>
+            Выбор формата отображения ячейки или диапазона (для заголовка)
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.MarginAttribute">
+            <summary>
+            Сдвиг последующих частей экселя. Стили не применяются
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.MarginAttribute.Top">
+            <summary>
+            Поле сверху
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.MarginAttribute.Bottom">
+            <summary>
+            Поле снизу
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.MarginAttribute.Left">
+            <summary>
+            Поле слева
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.PaddingAttribute">
+            <summary>
+            Сдвиг последующих частей экселя.
+            Будут применены стили, которые использует текущая часть
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.PaddingAttribute.Top">
+            <summary>
+            Отступ сверху
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.PaddingAttribute.Bottom">
+            <summary>
+            Отступ снизу
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.PaddingAttribute.Left">
+            <summary>
+            Отступ слева
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.PaddingAttribute.Right">
+            <summary>
+            Отступ справа
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.VerticalAlignAttributeBase">
+            <summary>
+            Выравнивание по вертикали
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.VerticalAlignAttributeBase.#ctor">
+            <summary>
+            Выравнивание по вертикали
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.VerticalAlignAttributeBase.#ctor(OfficeOpenXml.Style.ExcelVerticalAlignment)">
+            <summary>
+            Выравнивание по вертикали
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Attributes.VerticalAlignAttributeBase.Alignment">
+            <summary>
+            Тип выравнивания
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.VerticalAlignAttribute">
+            <summary>
+            Выравнивание по вертикали
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.VerticalAlignAttribute.#ctor(OfficeOpenXml.Style.ExcelVerticalAlignment)">
+            <summary>
+            Выравнивание по вертикали
+            </summary>
+            <param name="alignment">Тип выравнивания</param>
+        </member>
+        <member name="T:TsSoft.Excel.Attributes.HeaderVerticalAlignAttribute">
+            <summary>
+            Выравнивание по вертикали заголовков
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Attributes.HeaderVerticalAlignAttribute.#ctor(OfficeOpenXml.Style.ExcelVerticalAlignment)">
+            <summary>
+            Выравнивание по вертикали заголовков
+            </summary>
+            <param name="alignment">Тип выравнивания</param>
+        </member>
+        <member name="T:TsSoft.Excel.Config.IConfigFileNameProvider">
+            <summary>
+            Отдаёт имя файла с конфигурациями моделей
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Config.IConfigFileNameProvider.GetConfigFileName">
+            <summary>
+            Получить имя файла с конфигурациями моделей
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TsSoft.Excel.Config.ExcelConfig">
+            <summary>
+            Конфигурация моделей
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelConfig.Models">
+            <summary>
+            Модели
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Config.IExcelSubpartContainerConfig">
+            <summary>
+            Часть конфигурации, содержащая подчасти
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.IExcelSubpartContainerConfig.Parts">
+            <summary>
+            Изменяемые подчасти
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.IExcelSubpartContainerConfig.RemovedParts">
+            <summary>
+            Удаляемые подчасти
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Config.ExcelModelConfig">
+            <summary>
+            Конфигурация модели
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelModelConfig.Type">
+            <summary>
+            Тип модели
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelModelConfig.TypeString">
+            <summary>
+            Тип модели
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelModelConfig.SheetName">
+            <summary>
+            Имя листа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelModelConfig.SheetNameProperty">
+            <summary>
+            Имя свойства с именем листа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelModelConfig.Parts">
+            <summary>
+            Подчасти
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelModelConfig.RemovedParts">
+            <summary>
+            Удаляемые подчасти
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Config.ExcelPropertyConfig">
+            <summary>
+            Конфигурация свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelPropertyConfig.PropertyName">
+            <summary>
+            Имя свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelPropertyConfig.PartDescription">
+            <summary>
+            Описание части
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelPropertyConfig.Appearance">
+            <summary>
+            Стилизация и отступы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelPropertyConfig.Parts">
+            <summary>
+            Подчасти
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelPropertyConfig.RemovedParts">
+            <summary>
+            Удаляемые подчасти
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Config.ExcelAppearanceConfig">
+            <summary>
+            Стилизация и отступы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelAppearanceConfig.StyleAttributes">
+            <summary>
+            Стили
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelAppearanceConfig.Margin">
+            <summary>
+            Поля
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelAppearanceConfig.Padding">
+            <summary>
+            Отступы
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Config.ExcelRemovedPropertyConfig">
+            <summary>
+            Удаляемое свойство
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.ExcelRemovedPropertyConfig.PropertyName">
+            <summary>
+            Имя свойства
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Config.IConfigOverridesProvider">
+            <summary>
+            Отдаёт переопределения атрибутов моделей из конфигурационного файла
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Config.IConfigOverridesProvider.GetOverrides(System.Type)">
+            <summary>
+            Получить переопределения атрибутов модели
+            </summary>
+            <param name="modelType">Тип модели</param>
+        </member>
+        <member name="M:TsSoft.Excel.Config.IConfigOverridesProvider.GetWrapperOverrides(System.Type)">
+            <summary>
+            Получить переопределения атрибутов модели, которая используется как наполнитель <see cref="T:TsSoft.Excel.Models.ExcelTableWrapper`1"/>
+            </summary>
+            <param name="wrappedType">Тип модели для строки таблицы</param>
+        </member>
+        <member name="M:TsSoft.Excel.Config.IConfigOverridesProvider.GetLastConfigChange">
+            <summary>
+            Получить время последнего изменения модели
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Config.SerializableType">
+            <summary>
+            Сериализация System.Type
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Config.SerializableType.Serialize(System.Type)">
+            <summary>
+            Сериализовать System.Type
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Config.SerializableType.Deserialize(System.String)">
+            <summary>
+            Десериализовать System.Type
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Config.SerializableType.Serialize(System.Type[])">
+            <summary>
+            Сериализовать System.Type[]
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Config.SerializableType.Deserialize(System.String[])">
+            <summary>
+            Десериализовать System.Type[]
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Config.TsSoftExcelConfigurationSection">
+            <summary>
+            Секция конфигурации TsSoft.Excel
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Config.TsSoftExcelConfigurationSection.ConfigurationFile">
+            <summary>
+            Путь к конфигурационному файлу
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Constants.Numberformats">
+            <summary>
+            Форматы ячеек Excel
+            https://support.office.com/en-us/article/Create-or-delete-a-custom-number-format-78f2a361-936b-4c03-8772-09fab54be7f4
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Constants.Numberformats.DateTime">
+            <summary>
+            Форматы ячеек Excel для дат
+            </summary>
+        </member>
+        <member name="F:TsSoft.Excel.Constants.Numberformats.DateTime.ShortDate">
+            <summary>
+            Представление даты в виде дд.мм.гггг
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Formatters.IValueFormatter">
+            <summary>
+            Форматирует содержимое ячейки
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Formatters.IValueFormatter.Format(System.Object)">
+            <summary>
+            Форматировать содержимое ячейки
+            </summary>
+            <param name="value">Значение свойства модели</param>
+            <returns>Форматированное содержимое ячейки</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Formatters.ValueFormatterBase`1">
+            <summary>
+            Базовый класс для форматирования содержимого ячейки со строгой типизацией
+            </summary>
+            <typeparam name="T">Тип содержимого</typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Formatters.ValueFormatterBase`1.Format(System.Object)">
+            <summary>
+            Форматировать содержимое ячейки
+            </summary>
+            <param name="value">Значение свойства модели</param>
+            <returns>Форматированное содержимое ячейки</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Formatters.ValueFormatterBase`1.Format(`0)">
+            <summary>
+            Форматировать содержимое ячейки
+            </summary>
+            <param name="value">Значение свойства модели</param>
+            <returns>Форматированное содержимое ячейки</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Formatters.ValueFormatterJoiner`1">
+            <summary>
+            Форматтер значений ячейки, объединяющий коллекцию значений в строку с разделителем
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Formatters.ValueFormatterJoiner`1.Format(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Форматировать содержимое ячейки
+            </summary>
+            <param name="value">Значение свойства модели</param>
+            <returns>Форматированное содержимое ячейки</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Formatters.ValueFormatterJoiner`1.Join">
+            <summary>
+            Получатель значения
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Formatters.ValueFormatterJoiner`1.Separator">
+            <summary>
+            Разделитель
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Formatters.ValueFormatterStub">
+            <summary>
+            Заглушка форматирования содержимого ячейки
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Formatters.ValueFormatterStub.Format(System.Object)">
+            <summary>
+            Форматировать содержимое ячейки
+            </summary>
+            <param name="value">Значение свойства модели</param>
+            <returns>Значение свойства модели</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Formatters.ValueFormatterStub.Instance">
+            <summary>
+            Заглушка форматирования содержимого ячейки
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Generators.IExcelGenerator">
+            <summary>
+            Генератор Excel-документов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.IExcelGenerator.Generate``1(``0)">
+            <summary>
+            Генерировать Excel-документ
+            </summary>
+            <param name="model">Модель</param>
+            <returns>Поток сгенерированного документа</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.IExcelGenerator.Generate``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Генерировать Excel-документ с одной таблицей из моделей
+            </summary>
+            <param name="tableModels">Коллекция моделей</param>
+            <returns>Поток сгенерированного документа</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.IExcelGenerator.GenerateMultisheet``1(``0)">
+            <summary>
+            Генерировать Excel-документ с несколькими листами
+            </summary>
+            <typeparam name="T">Тип модели, свойства которой размечены <see cref="T:TsSoft.Excel.Attributes.ExcelWorksheetAttribute"/></typeparam>
+            <param name="multisheetModel">Модель</param>
+            <returns>Поток сгенерированного документа</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Generators.IExcelGenerator`1">
+            <summary>
+            Генератор Excel-документов
+            </summary>
+            <typeparam name="T">Тип модели</typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.IExcelGenerator`1.Generate(`0)">
+            <summary>
+            Генерировать Excel-документ
+            </summary>
+            <param name="model">Модель</param>
+            <returns>Поток сгенерированного документа</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.IExcelGenerator`1.GenerateMultisheet(`0)">
+            <summary>
+            Генерировать Excel-документ с несколькими листами
+            </summary>
+            <param name="model">Модель</param>
+            <returns>Поток сгенерированного документа</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.IExcelGenerator`1.Generate(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Генерировать Excel-документ с одной таблицей из моделей
+            </summary>
+            <param name="model">Коллекция моделей</param>
+            <returns>Поток сгенерированного документа</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Generators.Helpers.ITableGenerationHelper">
+            <summary>
+            Хелпер для генерации частей-таблиц
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.Helpers.ITableGenerationHelper.Generate``1(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.Models.IColumn{``0}},System.Boolean,TsSoft.Excel.Stylizers.ITableRowStylizer{``0},TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor{``0})">
+            <summary>
+            Генерировать часть-таблицу
+            </summary>
+            <typeparam name="T">Тип модели, из коллекции которых генерируется таблица</typeparam>
+            <param name="sheet">Лист Excel</param>
+            <param name="startRow">Начальная строка</param>
+            <param name="startColumn">Начальный столбец</param>
+            <param name="models">Коллекция моделей</param>
+            <param name="columns">Описания столбцов</param>
+            <param name="withHeader">Генерировать ли заголовки</param>
+            <param name="tableRowStylizer">Стилизатор для строк</param>
+            <param name="tableRowRangeProcessor">Обработчик строк</param>
+            <returns>Описание сгенерированной части</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.Helpers.ITableGenerationHelper.Generate``1(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.Models.IColumn{``0}},System.Boolean,System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.Stylizers.ITableRowStylizer{``0}},System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor{``0}})">
+            <summary>
+            Генерировать часть-таблицу
+            </summary>
+            <typeparam name="T">Тип модели, из коллекции которых генерируется таблица</typeparam>
+            <param name="sheet">Лист Excel</param>
+            <param name="startRow">Начальная строка</param>
+            <param name="startColumn">Начальный столбец</param>
+            <param name="models">Коллекция моделей</param>
+            <param name="columns">Описания столбцов</param>
+            <param name="withHeader">Генерировать ли заголовки</param>
+            <param name="tableRowStylizers">Стилизаторы для строк</param>
+            <param name="tableRowRangeProcessors">Обработчики строк</param>
+            <returns>Описание сгенерированной части</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.Helpers.ITableGenerationHelper.Generate``1(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.Models.Column{``0}},System.Boolean,System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.Stylizers.ITableRowStylizer{``0}},System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor{``0}})">
+            <summary>
+            Генерировать часть-таблицу
+            </summary>
+            <typeparam name="T">Тип модели, из коллекции которых генерируется таблица</typeparam>
+            <param name="sheet">Лист Excel</param>
+            <param name="startRow">Начальная строка</param>
+            <param name="startColumn">Начальный столбец</param>
+            <param name="models">Коллекция моделей</param>
+            <param name="columns">Описания столбцов</param>
+            <param name="withHeader">Генерировать ли заголовки</param>
+            <param name="tableRowStylizers">Стилизаторы для строк</param>
+            <param name="tableRowRangeProcessors">Обработчики строк</param>
+            <returns>Описание сгенерированной части</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Resolvers.IPartGenerator">
+            <summary>
+            Генератор части
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Resolvers.IPartGenerator.Generate(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Object,TsSoft.Excel.Models.PartModelBase)">
+            <summary>
+            Сгенерировать часть
+            </summary>
+            <param name="sheet">Лист Excel</param>
+            <param name="startRow">Начальная строка</param>
+            <param name="startColumn">Начальный столбец</param>
+            <param name="model">Модель части</param>
+            <param name="partModel">Описание части</param>
+            <returns>Описание сгенерированной части</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Generators.PartGenerators.ICellGenerator">
+            <summary>
+            Генерирует ячейки в листе
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.PartGenerators.ICellGenerator.Generate(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Object)">
+            <summary>
+            Генерировать ячейку
+            </summary>
+            <param name="sheet">Лист</param>
+            <param name="startRow">Строка</param>
+            <param name="startColumn">Столбец</param>
+            <param name="model">Содержимое ячейки</param>
+            <returns>Сгенерированная часть листа</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.PartGenerators.ICellGenerator.GenerateMerged(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
+            <summary>
+            Генерировать ячейку
+            </summary>
+            <param name="sheet">Лист</param>
+            <param name="startRow">Строка</param>
+            <param name="startColumn">Столбец</param>
+            <param name="height">Высота</param>
+            <param name="model">Содержимое ячейки</param>
+            <param name="width">Ширина</param>
+            <returns>Сгенерированная часть листа</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Generators.PartGenerators.ICustomGenerator">
+            <summary>
+            Генератор особой части
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Generators.PartGenerators.ICustomGenerator.Generate(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Object,TsSoft.Excel.Models.CustomPartModel)">
+            <summary>
+            Генерировать особую часть
+            </summary>
+            <param name="sheet">Лист Excel</param>
+            <param name="startRow">Номер начальной строки</param>
+            <param name="startColumn">Номер начального столбца</param>
+            <param name="value">Значение свойства модели</param>
+            <param name="partModel">Модель особой части</param>
+            <returns>Описание сгенерированного диапазона</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Helpers.AttributeConfigSerializer">
+            <summary>
+            Сериализует конфигурацию из атрибутов модели
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Helpers.IAttributeConfigSerializer">
+            <summary>
+            Сериализует конфигурацию из атрибутов модели
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IAttributeConfigSerializer.SerializeModelConfig(System.IO.Stream,System.Type[])">
+            <summary>
+            Сериализовать конфигурацию из атрибутов модели
+            </summary>
+            <param name="outStream">Выходной поток</param>
+            <param name="types">Типы моделей</param>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IAttributeConfigSerializer.SerializeModelConfig(System.String,System.Type[])">
+            <summary>
+            Сериализовать конфигурацию из атрибутов модели
+            </summary>
+            <param name="fileName">Имя файла</param>
+            <param name="types">Типы моделей</param>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.AttributeConfigSerializer.#ctor">
+            <summary>
+            Сериализует конфигурацию из атрибутов модели
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.AttributeConfigSerializer.SerializeModelConfig(System.IO.Stream,System.Type[])">
+            <summary>
+            Сериализовать конфигурацию из атрибутов модели
+            </summary>
+            <param name="outStream">Выходной поток</param>
+            <param name="types">Типы моделей</param>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.AttributeConfigSerializer.SerializeModelConfig(System.String,System.Type[])">
+            <summary>
+            Сериализовать конфигурацию из атрибутов модели
+            </summary>
+            <param name="fileName">Имя файла</param>
+            <param name="types">Типы моделей</param>
+        </member>
+        <member name="T:TsSoft.Excel.Helpers.IColumnCreator">
+            <summary>
+            Создаёт модель столбцов по атрибутным моделям
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Helpers.IExcelModelProvider">
+            <summary>
+            Получает описание модели из метаданных сборки и конфигурационных файлов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IExcelModelProvider.GetModel(System.Type)">
+            <summary>
+            Получить описание модели
+            </summary>
+            <param name="modelType">Тип модели</param>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IExcelModelProvider.GetWrappedModel(System.Type)">
+            <summary>
+            Получить описание модели
+            </summary>
+            <param name="modelType">Тип модели, используемый в качестве начинки для <see cref="T:TsSoft.Excel.Models.ExcelTableWrapper`1"/></param>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IExcelModelProvider.GetMultisheetModel(System.Type)">
+            <summary>
+            Получить описание модели для документа с несколькими листами
+            </summary>
+            <param name="multisheetModelType">Тип модели</param>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IExcelModelProvider.GetModel``1">
+            <summary>
+            Получить описание модели
+            </summary>
+            <typeparam name="T">Тип модели</typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IExcelModelProvider.GetWrappedModel``1">
+            <summary>
+            Получить описание модели
+            </summary>
+            <typeparam name="T">Тип модели, используемый в качестве начинки для <see cref="T:TsSoft.Excel.Models.ExcelTableWrapper`1"/></typeparam>
+        </member>
+        <member name="T:TsSoft.Excel.Helpers.GeneratorFactory">
+            <summary>
+            Фабрика генераторов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.GeneratorFactory.#cctor">
+            <summary>
+            Фабрика генераторов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.GeneratorFactory.AddBindings(TsSoft.BindingsDescription.IBindingsDescription)">
+            <summary>
+            Добавить связи интерфейсов с реализациями зависимостей
+            </summary>
+            <param name="description">Описание связей</param>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.GeneratorFactory.CreateGenerator``1">
+            <summary>
+            Создать генератор для типа модели
+            </summary>
+            <typeparam name="TModel">Тип модели</typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.GeneratorFactory.CreateDependency``1">
+            <summary>
+            Создать экземпляр типа T
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.GeneratorFactory.SingletonGenerator``1">
+            <summary>
+            Получить генератор-синглтон для типа модели
+            </summary>
+            <typeparam name="TModel">Тип модели</typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.GeneratorFactory.SingletonDependency``1">
+            <summary>
+            Получить экземпляр-синглтон типа T
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.GeneratorFactory.Create(System.Type)">
+            <summary>
+            Создать экземпляр типа T
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.GeneratorFactory.InternalGetDependency(System.Type,System.Collections.Concurrent.ConcurrentDictionary{System.Type,System.Object})">
+            <summary>
+            Создать зависимость
+            </summary>
+            <param name="dependencyType">Тип зависимости</param>
+            <param name="contextObjects">Уже созданные зависимости</param>
+            <returns>Экземпляр зависимости</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Resolvers.IGeneratorResolver">
+            <summary>
+            Разрешитель генераторов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Resolvers.IGeneratorResolver.GetCustomGenerator(System.Type)">
+            <summary>
+            Получить генератор особой части
+            </summary>
+            <param name="customGeneratorType">Тип генератора особой части</param>
+            <returns>Экземпляр генератора особой части</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Resolvers.IGeneratorResolver.GetGenerator(System.Type)">
+            <summary>
+            Получить генератор части
+            </summary>
+            <param name="generatorInterface">Интерфейс генератора части</param>
+            <returns>Экземпляр генератора части</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Resolvers.IStylizerResolver">
+            <summary>
+            Разрешитель стилизаторов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Resolvers.IStylizerResolver.GetStylizer(System.Type,System.Reflection.PropertyInfo)">
+            <summary>
+            Получить стилизатор
+            </summary>
+            <param name="stylizerType">Тип стилизатора</param>
+            <param name="pi">Свойство, ячейки со значением которого стилизуются, либо null, если стилизатор применяется к диапазону ячеек со значениями из различных свойств</param>
+            <returns>Экземпляр стилизатора</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Resolvers.IValueFormatterResolver">
+            <summary>
+            Разрешитель форматтеров содержимого ячеек
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Resolvers.IValueFormatterResolver.GetValueFormatter(System.Type,System.Reflection.PropertyInfo)">
+            <summary>
+            Получить форматтер содержимого ячеек
+            </summary>
+            <param name="formatterType">Тип форматтера</param>
+            <param name="pi">Свойство, значение которого обрабатывается форматтером</param>
+            <returns>Экземпляр форматтера</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Resolvers.IRangeProcessorResolver">
+            <summary>
+            Разрешитель обработчиков областей
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Resolvers.IRangeProcessorResolver.GetRangeProcessor(System.Type,System.Reflection.PropertyInfo)">
+            <summary>
+            Получить обработчик области
+            </summary>
+            <param name="rangeProcessorType">Тип обработчика области</param>
+            <param name="pi">Свойство, ячейки со значением которого обрабатываются, либо null, если обработчик применяется к диапазону ячеек со значениями из различных свойств</param>
+            <returns>Экземпляр обработчика</returns>
+        </member>
+        <member name="T:TsSoft.Excel.Helpers.IPropertyRetrieverCache">
+            <summary>
+            Кэш делегатов для получения значения свойства
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IPropertyRetrieverCache.GetPropertyValueRetriever(System.Reflection.PropertyInfo)">
+            <summary>
+            Получить делегат, извлекающий значение свойства из объекта
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IPropertyRetrieverCache.GetPropertyValueRetriever``1(System.Collections.Generic.IReadOnlyList{System.Reflection.PropertyInfo})">
+            <summary>
+            Получить делегат, извлекающий значение свойства из объекта
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Helpers.IPropertyRetrieverCreator">
+            <summary>
+            Строит делегаты для получения значения свойства
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IPropertyRetrieverCreator.CreatePropertyValueRetriever(System.Reflection.PropertyInfo)">
+            <summary>
+            Создать делегат, извлекающий значение свойства из объекта
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Helpers.IPropertyRetrieverCreator.CreatePropertyValueRetriever``1(System.Collections.Generic.IReadOnlyList{System.Reflection.PropertyInfo})">
+            <summary>
+            Создать делегат, извлекающий значение свойства из объекта
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Helpers.PropertyRetrieverCache.CacheKey.Type">
+            <summary>
+            Тип параметра
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Helpers.PropertyRetrieverCache.CacheKey.Property">
+            <summary>
+            Свойство для короткого пути из одного свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Helpers.PropertyRetrieverCache.CacheKey.Path">
+            <summary>
+            Путь
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.AttributedCellStyle">
+            <summary>
+            Стиль, описанный в атрибутах
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.AttributedCellStyle.#ctor">
+            <summary>
+            Стиль, описанный в атрибутах
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.AttributedCellStyle.#ctor(System.Collections.Generic.IEnumerable{TsSoft.Excel.Attributes.StyleAttributeBase},System.Type,System.Nullable{System.Boolean})">
+            <summary>
+            Стиль, описанный в атрибутах
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.AttributedCellStyle.Apply(OfficeOpenXml.ExcelRange)">
+            <summary>
+            Применить стиль к диапазону
+            </summary>
+            <param name="range">Диапазон</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.AttributedCellStyle.Merge(TsSoft.Excel.Models.AttributedCellStyle)">
+            <summary>
+            Слить стиль
+            </summary>
+            <param name="with">С чем сливать</param>
+            <returns>Результат слияния</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.FontName">
+            <summary>
+            Имя шрифта (FontFamily)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.Bold">
+            <summary>
+            Жирный
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.Italic">
+            <summary>
+            Курсив
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.Underline">
+            <summary>
+            Подчёркнутый
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.Strike">
+            <summary>
+            Зачёркнутый
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.Size">
+            <summary>
+            Размер шрифта
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.FontColor">
+            <summary>
+            Цвет шрифта
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.BackgroundColor">
+            <summary>
+            Цвет фона
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.Border">
+            <summary>
+            Тип границы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.BorderColor">
+            <summary>
+            Цвет границы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.BorderCells">
+            <summary>
+            Тип границы (для вложенных ячеек)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.BorderCellsColor">
+            <summary>
+            Цвет границы (для вложенных ячеек)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.Align">
+            <summary>
+            Тип горизонтального выравнивания
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.VerticalAlign">
+            <summary>
+            Тип вертикального выравнивания
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.AutoFitType">
+            <summary>
+            Подбор ширины столбцов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.Numberformat">
+            <summary>
+            Формат ячейки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.MinWidth">
+            <summary>
+            Минимальная ширина (в пунктах)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedCellStyle.MinHeight">
+            <summary>
+            Минимальная высота (в пунктах)
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.AttributedStyle">
+            <summary>
+            Стиль из атрибутов
+            </summary>
+        </member>
+        <member name="F:TsSoft.Excel.Models.AttributedStyle.Empty">
+            <summary>
+            Отсутствие стилизующих атрибутов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.AttributedStyle.#ctor(TsSoft.Excel.Models.AttributedCellStyle,TsSoft.Excel.Models.AttributedCellStyle)">
+            <summary>
+            Стиль из атрибутов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.AttributedStyle.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            Стиль из атрибутов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.AttributedStyle.#ctor(System.Collections.Generic.IEnumerable{TsSoft.Excel.Attributes.StyleAttributeBase},System.Type)">
+            <summary>
+            Стиль из атрибутов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.AttributedStyle.Merge(TsSoft.Excel.Models.AttributedStyle)">
+            <summary>
+            Слить стиль
+            </summary>
+            <param name="with">С чем сливать</param>
+            <returns>Результат слияния</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedStyle.NonHeaderStyle">
+            <summary>
+            Стиль обычных ячеек
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.AttributedStyle.HeaderStyle">
+            <summary>
+            Стиль заголовков
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.PartModelBase">
+            <summary>
+            Описание части
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.IStylized">
+            <summary>
+            Стилизованный объект
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IStylized.AttributedStyle">
+            <summary>
+            Стили из атрибутов свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IStylized.Stylizer">
+            <summary>
+            Стилизатор
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IStylized.HeaderStylizer">
+            <summary>
+            Стилизатор заголовка
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IStylized.RangeProcessor">
+            <summary>
+            Обработчик
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IStylized.HeaderRangeProcessor">
+            <summary>
+            Обработчик заголовка
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.Property">
+            <summary>
+            Свойство, из которого выделяется модель части
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.Retriever">
+            <summary>
+            Получатель содержимого свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.AttributedStyle">
+            <summary>
+            Стили из атрибутов свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.Stylizer">
+            <summary>
+            Стилизатор
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.HeaderStylizer">
+            <summary>
+            Стилизатор заголовка
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.RangeProcessor">
+            <summary>
+            Обработчик
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.HeaderRangeProcessor">
+            <summary>
+            Обработчик заголовка
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.Margin">
+            <summary>
+            Поля
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.Padding">
+            <summary>
+            Отступ
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.Order">
+            <summary>
+            Порядковый номер
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.RemovedProperties">
+            <summary>
+            Исключённые из построения подсвойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.PartModelBase.ValueFormatter">
+            <summary>
+            Форматтер значения свойства
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.Column`1">
+            <summary>
+            Описание столбца таблицы (или нескольких столбцов с общим заголовком)
+            </summary>
+            <typeparam name="TModel">Тип модели столбца</typeparam>
+        </member>
+        <member name="T:TsSoft.Excel.Models.ColumnBase`1">
+            <summary>
+            Базовый класс для описания столбца таблицы
+            </summary>
+            <typeparam name="TModel">Тип модели строки</typeparam>
+        </member>
+        <member name="T:TsSoft.Excel.Models.ColumnBase">
+            <summary>
+            Базовый класс для описания столбца таблицы
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.IColumn">
+            <summary>
+            Описание столбца в таблице
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.IColumn.GenerateHeader(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Int32,TsSoft.Excel.Generators.PartGenerators.ICellGenerator)">
+            <summary>
+            Сгенерировать заголовок
+            </summary>
+            <param name="sheet">Эксель-лист</param>
+            <param name="startRow">Начальная строка</param>
+            <param name="startColumn">Начальный столбец</param>
+            <param name="height">Высота заголовка</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <returns>Описание сгенерированной части</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Models.IColumn.StartColumn(System.Int32,System.Int32)">
+            <summary>
+            Получить начальное состояние генерации столбца
+            </summary>
+            <param name="firstRow">Начальная строка</param>
+            <param name="firstColumn">Начальный столбец</param>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IColumn.Header">
+            <summary>
+            Заголовок
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IColumn.Width">
+            <summary>
+            Ширина заголовка столбца в ячейках (количество листьев в дереве)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IColumn.Depth">
+            <summary>
+            Максимальный уровень вложенности
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IColumn.HeaderDepth">
+            <summary>
+            Максимальный уровень вложенности заголовков
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IColumn.IsMultiRow">
+            <summary>
+            Является ли многострочным столбцом
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IColumn.SubColumnCollection">
+            <summary>
+            Коллекция подстолбцов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.ColumnBase.StartColumn(System.Int32,System.Int32)">
+            <summary>
+            Получить начальное состояние генерации столбца
+            </summary>
+            <param name="firstRow">Текущая строка</param>
+            <param name="firstColumn">Текущий столбец</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.ColumnBase.GenerateHeader(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Int32,TsSoft.Excel.Generators.PartGenerators.ICellGenerator)">
+            <summary>
+            Генерировать заголовок
+            </summary>
+            <param name="sheet">Эксель-лист</param>
+            <param name="startRow">Начальная строка</param>
+            <param name="startColumn">Начальный столбец</param>
+            <param name="height">Высота заголовка в ячейках</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <returns>Описание сгенерированной части листа</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Models.ColumnBase.RowPart``1(``0,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить часть для строки
+            </summary>
+            <typeparam name="T">Тип модели строки</typeparam>
+            <param name="model">Модель строки</param>
+            <param name="firstRow">Номер первой строки</param>
+            <param name="lastRow">Номер последней строки</param>
+            <param name="firstColumn">Номер первого столбца</param>
+            <param name="lastColumn">Номер последнего столбца</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.ColumnBase.AddStylizerAndProcessorRanges``1(TsSoft.Excel.Models.IGeneratedColumn,``0,System.Int32,System.Int32,TsSoft.Excel.Stylizers.ITableRowStylizer{``0},TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor{``0},TsSoft.Excel.Models.StylizedTableParts)">
+            <summary>
+            Добавить стилизаторы и обработчики строк и ячеек
+            </summary>
+            <typeparam name="T">Тип модели строки или подстроки</typeparam>
+            <param name="generatedColumn">Информация о генерации столбца</param>
+            <param name="model">Модель строки или подстроки</param>
+            <param name="firstRow">Номер первой строки в листе</param>
+            <param name="lastRow">Номер последней строки в листе</param>
+            <param name="stylizer">Стилизатор</param>
+            <param name="processor">Обработчик</param>
+            <param name="stylizedTableParts">Коллекция стилизованных частей</param>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.Header">
+            <summary>
+            Заголовок
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.Stylizer">
+            <summary>
+            Стилизатор
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.HeaderStylizer">
+            <summary>
+            Стилизатор заголовка
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.RangeProcessor">
+            <summary>
+            Обработчик
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.HeaderRangeProcessor">
+            <summary>
+            Обработчик заголовка
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.AttributedStyle">
+            <summary>
+            Стили из атрибутов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.ValueFormatter">
+            <summary>
+            Форматтер значения ячейки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.Width">
+            <summary>
+            Ширина заголовка столбца в ячейках
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.Depth">
+            <summary>
+            Максимальный уровень вложенности
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.HeaderDepth">
+            <summary>
+            Максимальный уровень вложенности заголовков
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.IsMultiRow">
+            <summary>
+            Является ли многострочным столбцом
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.SubColumnCollection">
+            <summary>
+            Коллекция подстолбцов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase.WithoutHeader">
+            <summary>
+            Отключить генерацию заголовка для столбца
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.IColumn`1">
+            <summary>
+            Генератор столбца таблицы
+            </summary>
+            <typeparam name="TModel"></typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Models.IColumn`1.GetHeight(`0)">
+            <summary>
+            Получить высоту строки в ячейках для столбца
+            </summary>
+            <param name="model">Модель строки</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.IColumn`1.GenerateRow(TsSoft.Excel.Models.IGeneratedColumn,`0,OfficeOpenXml.ExcelWorksheet,System.Int32,System.Nullable{System.Int32},TsSoft.Excel.Generators.PartGenerators.ICellGenerator,TsSoft.Excel.Models.StylizedTableParts)">
+            <summary>
+            Генерировать строку в столбце
+            </summary>
+            <param name="generatedColumn">Текущее состояние генерируемого столбца</param>
+            <param name="model">Модель строки</param>
+            <param name="sheet">Эксель-лист</param>
+            <param name="currentRow">Номер текущей строки</param>
+            <param name="height">Высота текущей строки в ячейках</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <param name="stylizedParts">Коллекция стилизованных областей</param>
+            <returns>Занятое сгенерированным содержимым количество строк</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Models.ColumnBase`1.GetHeight(`0)">
+            <summary>
+            Получить высоту строки в ячейках для столбца
+            </summary>
+            <param name="model">Модель строки</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.ColumnBase`1.GenerateRow(TsSoft.Excel.Models.IGeneratedColumn,`0,OfficeOpenXml.ExcelWorksheet,System.Int32,System.Nullable{System.Int32},TsSoft.Excel.Generators.PartGenerators.ICellGenerator,TsSoft.Excel.Models.StylizedTableParts)">
+            <summary>
+            Генерировать строку в столбце
+            </summary>
+            <param name="generatedColumn">Текущее состояние генерируемого столбца</param>
+            <param name="model">Модель строки</param>
+            <param name="sheet">Эксель-лист</param>
+            <param name="currentRow">Номер текущей строки</param>
+            <param name="height">Высота текущей строки в ячейках</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <param name="stylizedTableParts">Коллекция стилизованных областей</param>
+            <returns>Занятое сгенерированным содержимым количество строк</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase`1.ValueExtractor">
+            <summary>
+            Получатель содержимого столбца из модели строки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase`1.CellStylizer">
+            <summary>
+            Стилизатор ячейки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.ColumnBase`1.CellRangeProcessor">
+            <summary>
+            Обработчик ячейки
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.Column`1.GetHeight(`0)">
+            <summary>
+            Получить высоту строки в ячейках для столбца
+            </summary>
+            <param name="model">Модель строки</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.Column`1.GenerateRow(TsSoft.Excel.Models.IGeneratedColumn,`0,OfficeOpenXml.ExcelWorksheet,System.Int32,System.Nullable{System.Int32},TsSoft.Excel.Generators.PartGenerators.ICellGenerator,TsSoft.Excel.Models.StylizedTableParts)">
+            <summary>
+            Генерировать строку в столбце
+            </summary>
+            <param name="generatedColumn">Текущее состояние генерируемого столбца</param>
+            <param name="model">Модель строки</param>
+            <param name="sheet">Эксель-лист</param>
+            <param name="currentRow">Номер текущей строки</param>
+            <param name="height">Высота текущей строки в ячейках</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <param name="stylizedTableParts">Коллекция стилизованных областей</param>
+            <returns>Занятое сгенерированным содержимым количество строк</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Models.Column`1.Depth">
+            <summary>
+            Максимальный уровень вложенности
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.Column`1.Width">
+            <summary>
+            Ширина заголовка столбца в ячейках (количество листьев в дереве)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.Column`1.HeaderDepth">
+            <summary>
+            Максимальный уровень вложенности заголовков
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.Column`1.IsMultiRow">
+            <summary>
+            Является ли многострочным столбцом
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.Column`1.SubColumnCollection">
+            <summary>
+            Коллекция подстолбцов
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.CustomPartModel">
+            <summary>
+            Модель особой части
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.CustomPartModel.Generator">
+            <summary>
+            Генератор для особой части
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.ExcelRangeExtensions">
+            <summary>
+            Расширение для ExcelRange из EPPlus
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.ExcelRangeExtensions.SheetColumns(OfficeOpenXml.ExcelRange)">
+            <summary>
+            Получить перечисление столбцов области
+            </summary>
+            <param name="range">Область</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.ExcelRangeExtensions.SheetRows(OfficeOpenXml.ExcelRange)">
+            <summary>
+            Получить перечисление строк области
+            </summary>
+            <param name="range">Область</param>
+        </member>
+        <member name="T:TsSoft.Excel.Models.GeneratedColumn">
+            <summary>
+            Состояние генерации столбца
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.IGeneratedColumn">
+            <summary>
+            Состояние генерации столбца
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.IGeneratedTablePart">
+            <summary>
+            Стилизованная часть таблицы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IGeneratedTablePart.GeneratedRange">
+            <summary>
+            Описание местоположения части
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IGeneratedTablePart.Stylizer">
+            <summary>
+            Стилизатор
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IGeneratedTablePart.RangeProcessor">
+            <summary>
+            Обработчик
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IGeneratedTablePart.AttributedStyle">
+            <summary>
+            Стиль, полученный из атрибутов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.IGeneratedColumn.GetChild(TsSoft.Excel.Models.IColumn)">
+            <summary>
+            Получить состояние генерации подстолбца
+            </summary>
+            <param name="childColumn">Описание подстолбца</param>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IGeneratedColumn.RawGeneratedRange">
+            <summary>
+            Сгенерированная часть листа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IGeneratedColumn.FirstColumn">
+            <summary>
+            Номер первого эксель-столбца в генерируемом столбце
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.IGeneratedColumn.LastColumn">
+            <summary>
+            Номер последнего эксель-столбца в генерируемом столбце
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.GeneratedRange">
+            <summary>
+            Описание сгенерированного для части диапазона
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange.#ctor(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Описание сгенерированной части без содержимого
+            </summary>
+            <param name="row">Строка, в которой начинается часть</param>
+            <param name="column">Столбец, в которой начинается часть</param>
+            <param name="isHeader">Является ли часть заголовком</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Описание сгенерированной части
+            </summary>
+            <param name="firstRow">Первая строка</param>
+            <param name="firstColumn">Первый столбец</param>
+            <param name="lastRow">Последняя строка</param>
+            <param name="lastColumn">Последний столбец</param>
+            <param name="hasContent">Имеется ли содержимое (если содержимого нет, стилизация не применяется)</param>
+            <param name="isHeader">Является ли часть заголовком</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange.AddChild(TsSoft.Excel.Models.GeneratedRange,TsSoft.Excel.Stylizers.IStylizer,TsSoft.Excel.RangeProcessors.IRangeProcessor,TsSoft.Excel.Models.AttributedCellStyle)">
+            <summary>
+            Добавить подчасть
+            </summary>
+            <param name="child">Описание подчасти</param>
+            <param name="stylizer">Стилизатор подчасти</param>
+            <param name="rangeProcessor">Обработчик подчасти</param>
+            <param name="attributedStyle">Стили из атрибутов подчасти</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange.AddChild(TsSoft.Excel.Models.GeneratedRange,TsSoft.Excel.Attributes.PaddingAttribute,TsSoft.Excel.Stylizers.IStylizer,TsSoft.Excel.RangeProcessors.IRangeProcessor,TsSoft.Excel.Models.AttributedCellStyle)">
+            <summary>
+            Добавить подчасть
+            </summary>
+            <param name="child">Описание подчасти</param>
+            <param name="padding">Отступ подчасти</param>
+            <param name="stylizer">Стилизатор подчасти</param>
+            <param name="rangeProcessor">Обработчик подчасти</param>
+            <param name="attributedStyle">Стили из атрибутов подчасти</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange.Append(TsSoft.Excel.Models.GeneratedRange)">
+            <summary>
+            Включить диапазон части в данную
+            </summary>
+            <param name="part">Включаемая часть</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange.ApplyStylizer(OfficeOpenXml.ExcelRange)">
+            <summary>
+            Применить стилизатор
+            </summary>
+            <param name="range">Область</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange.ApplyStylizer(OfficeOpenXml.Style.ExcelStyle)">
+            <summary>
+            Применить стилизатор
+            </summary>
+            <param name="style">Стиль</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange.ApplyRangeProcessor(OfficeOpenXml.ExcelRange)">
+            <summary>
+            Применить обработчик области
+            </summary>
+            <param name="range">Область</param>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.FirstColumn">
+            <summary>
+            Первый столбец
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.FirstRow">
+            <summary>
+            Первая строка
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.LastColumn">
+            <summary>
+            Последний столбец
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.LastRow">
+            <summary>
+            Последняя строка
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.HasContent">
+            <summary>
+            Имеется ли содержимое (если содержимого нет, стилизация не применяется)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.IsHeader">
+            <summary>
+            Является ли заголовком
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.AttributedStyle">
+            <summary>
+            Стили из атрибутов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.Stylizer">
+            <summary>
+            Стилизатор
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.RangeProcessor">
+            <summary>
+            Обработчик
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange.Children">
+            <summary>
+            Описания сгенерированных подчастей
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.GeneratedRange`1">
+            <summary>
+            Описание сгенерированной части строки таблицы с моделью строки
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange`1.#ctor(System.Int32,System.Int32,System.Boolean,`0)">
+            <summary>
+            Описание сгенерированной части строки таблицы с моделью строки
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange`1.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,`0)">
+            <summary>
+            Описание сгенерированной части строки таблицы с моделью строки
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange`1.ApplyStylizer(OfficeOpenXml.Style.ExcelStyle)">
+            <summary>
+            Применить стилизатор
+            </summary>
+            <param name="style">Стиль</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.GeneratedRange`1.ApplyRangeProcessor(OfficeOpenXml.ExcelRange)">
+            <summary>
+            Применить обработчик области
+            </summary>
+            <param name="range">Область</param>
+        </member>
+        <member name="P:TsSoft.Excel.Models.GeneratedRange`1.Model">
+            <summary>
+            Модель строки таблицы
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.MultiColumn`2">
+            <summary>
+            Описание нескольких многострочных столбцов с общим заголовком
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.MultiColumnBase`1">
+            <summary>
+            Описание нескольких столбцов с общим заголовком
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.MultiColumnBase`1.CalcOwnHeight(System.Int32)">
+            <summary>
+            Сколько строк занять общим заголовком при заданной высоте заголовка для всей конструкции со вложением
+            </summary>
+            <param name="fullHeight">Высота заголовка для данного столбца вместе со всеми вложенными</param>
+            <remarks>Откусывает максимально возможный кусок</remarks>
+        </member>
+        <member name="M:TsSoft.Excel.Models.MultiColumnBase`1.GenerateHeader(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Int32,TsSoft.Excel.Generators.PartGenerators.ICellGenerator)">
+            <summary>
+            Генерировать заголовок
+            </summary>
+            <param name="sheet">Эксель-лист</param>
+            <param name="startRow">Начальная строка</param>
+            <param name="startColumn">Начальный столбец</param>
+            <param name="height">Высота заголовка в ячейках</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <returns>Описание сгенерированной части листа</returns>
+        </member>
+        <member name="M:TsSoft.Excel.Models.MultiColumnBase`1.ProcessSubcolumns``1(TsSoft.Excel.Models.IGeneratedColumn,System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.Models.IColumn{``0}},``0,OfficeOpenXml.ExcelWorksheet,System.Int32,TsSoft.Excel.Generators.PartGenerators.ICellGenerator,TsSoft.Excel.Models.StylizedTableParts)">
+            <summary>
+            Обработать подстолбцы
+            </summary>
+            <typeparam name="TSubcolumnModel">Модель подстроки</typeparam>
+            <param name="generatedColumn">Состояние генерируемого столбца</param>
+            <param name="subcolumns">Описание подстолбцов</param>
+            <param name="model">Модель подстроки</param>
+            <param name="sheet">Эксель-лист</param>
+            <param name="currentRow">Номер текущей строки</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <param name="stylizedTableParts">Коллекция стилизованных частей таблицы</param>
+            <returns>Высота сгенерированной части в ячейках</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumnBase`1.SubColumnCollection">
+            <summary>
+            Коллекция подстолбцов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumnBase`1.Depth">
+            <summary>
+            Максимальный уровень вложенности
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumnBase`1.HeaderDepth">
+            <summary>
+            Максимальный уровень вложенности заголовков
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumnBase`1.Width">
+            <summary>
+            Ширина заголовка столбца (количество листьев в дереве)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.MultiColumn`2.GetHeight(`0)">
+            <summary>
+            Получить высоту строки в ячейках для столбца
+            </summary>
+            <param name="model">Модель строки</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.MultiColumn`2.GenerateRow(TsSoft.Excel.Models.IGeneratedColumn,`0,OfficeOpenXml.ExcelWorksheet,System.Int32,System.Nullable{System.Int32},TsSoft.Excel.Generators.PartGenerators.ICellGenerator,TsSoft.Excel.Models.StylizedTableParts)">
+            <summary>
+            Генерировать строку в столбце
+            </summary>
+            <param name="generatedColumn">Текущее состояние генерируемого столбца</param>
+            <param name="model">Модель строки</param>
+            <param name="sheet">Эксель-лист</param>
+            <param name="currentRow">Номер текущей строки</param>
+            <param name="height">Высота текущей строки в ячейках</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <param name="stylizedTableParts">Коллекция стилизованных областей</param>
+            <returns>Занятое сгенерированным содержимым количество строк</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumn`2.SubColumns">
+            <summary>
+            Дочерние столбцы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumn`2.SubmodelCellStylizer">
+            <summary>
+            Построчный стилизатор ячейки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumn`2.SubmodelCellRangeProcessor">
+            <summary>
+            Построчный обработчик ячейки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumn`2.SubColumnCollection">
+            <summary>
+            Коллекция подстолбцов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumn`2.IsMultiRow">
+            <summary>
+            Является ли многострочным столбцом
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.MultiColumn`1">
+            <summary>
+            Описание нескольких столбцов с общим заголовком
+            </summary>
+            <typeparam name="TModel"></typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Models.MultiColumn`1.GetHeight(`0)">
+            <summary>
+            Получить высоту строки в ячейках для столбца
+            </summary>
+            <param name="model">Модель строки</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.MultiColumn`1.GenerateRow(TsSoft.Excel.Models.IGeneratedColumn,`0,OfficeOpenXml.ExcelWorksheet,System.Int32,System.Nullable{System.Int32},TsSoft.Excel.Generators.PartGenerators.ICellGenerator,TsSoft.Excel.Models.StylizedTableParts)">
+            <summary>
+            Генерировать строку в столбце
+            </summary>
+            <param name="generatedColumn">Текущее состояние генерируемого столбца</param>
+            <param name="model">Модель строки</param>
+            <param name="sheet">Эксель-лист</param>
+            <param name="currentRow">Номер текущей строки</param>
+            <param name="height">Высота текущей строки в ячейках</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <param name="stylizedTableParts">Коллекция стилизованных областей</param>
+            <returns>Занятое сгенерированным содержимым количество строк</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumn`1.SubColumns">
+            <summary>
+            Дочерние столбцы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumn`1.SubColumnCollection">
+            <summary>
+            Коллекция подстолбцов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiColumn`1.IsMultiRow">
+            <summary>
+            Является ли многострочным столбцом
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.MultiRowColumn`2">
+            <summary>
+            Многострочный столбец
+            </summary>
+            <typeparam name="TModel">Модель строки</typeparam>
+            <typeparam name="TModelElement">Модель подстроки</typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Models.MultiRowColumn`2.GetHeight(`0)">
+            <summary>
+            Получить высоту строки в ячейках для столбца
+            </summary>
+            <param name="model">Модель строки</param>
+        </member>
+        <member name="M:TsSoft.Excel.Models.MultiRowColumn`2.GenerateRow(TsSoft.Excel.Models.IGeneratedColumn,`0,OfficeOpenXml.ExcelWorksheet,System.Int32,System.Nullable{System.Int32},TsSoft.Excel.Generators.PartGenerators.ICellGenerator,TsSoft.Excel.Models.StylizedTableParts)">
+            <summary>
+            Генерировать строку
+            </summary>
+            <param name="generatedColumn">Состояние генерации столбца</param>
+            <param name="model">Модель строки</param>
+            <param name="sheet">Лист эксель</param>
+            <param name="currentRow">Номер текущей строки</param>
+            <param name="height">Высота генерируемой строки в ячейках</param>
+            <param name="cellGenerator">Генератор ячеек</param>
+            <param name="stylizedTableParts">Коллекция стилизованных частей таблицы</param>
+            <returns>Высота сгенерированного элемента</returns>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiRowColumn`2.Width">
+            <summary>
+            Ширина столбца в ячейках
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiRowColumn`2.Depth">
+            <summary>
+            Глубина вложенных столбцов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiRowColumn`2.HeaderDepth">
+            <summary>
+            Глубина вложенных заголовков
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiRowColumn`2.IsMultiRow">
+            <summary>
+            Является ли многострочным
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.MultiRowColumn`2.SubColumnCollection">
+            <summary>
+            Коллекция подстолбцов
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.StylizedCell">
+            <summary>
+            Описание стилизованной ячейки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedCell.GeneratedRange">
+            <summary>
+            Часть листа, содержащая ячейку
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedCell.Stylizer">
+            <summary>
+            Стилизатор
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedCell.RangeProcessor">
+            <summary>
+            Обработчик
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedCell.AttributedStyle">
+            <summary>
+            Стиль, полученный из атрибутов
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.StylizedRow">
+            <summary>
+            Описание стилизованной строки таблицы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedRow.GeneratedRange">
+            <summary>
+            Часть листа, содержащая строку
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedRow.Stylizer">
+            <summary>
+            Стилизатор
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedRow.RangeProcessor">
+            <summary>
+            Обработчик
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedRow.AttributedStyle">
+            <summary>
+            Стиль, полученный из атрибутов
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Models.StylizedTableParts">
+            <summary>
+            Коллекция стилизованных частей таблицы
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Models.StylizedTableParts.#ctor">
+            <summary>
+            Коллекция стилизованных частей таблицы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedTableParts.StylizedCellRanges">
+            <summary>
+            Стилизованные ячейки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedTableParts.ProcessedCellRanges">
+            <summary>
+            Обработанные ячейки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedTableParts.StylizedRowRanges">
+            <summary>
+            Стилизованные строки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Excel.Models.StylizedTableParts.ProcessedRowRanges">
+            <summary>
+            Обработанные ячейки
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Bindings.TsSoftExcelBindingsDescription">
+            <summary>
+            Описание интерфейсов и их реализаций в сборке TsSoft.Excel
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Bindings.TsSoftExcelBindingsDescription.#ctor">
+            <summary>
+            Описание интерфейсов и их реализаций в сборке TsSoft.Excel
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.RangeProcessors.DiscriminatingRangeProcessor`1">
+            <summary>
+            Обработчик области, принимающий модель
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.RangeProcessors.IDiscriminatingRangeProcessor`1">
+            <summary>
+            Обработчик области, принимающий модель
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.RangeProcessors.IRangeProcessor">
+            <summary>
+            Обработчик области
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.RangeProcessors.IRangeProcessor.Apply(OfficeOpenXml.ExcelRange)">
+            <summary>
+            Применить обработчик области
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.RangeProcessors.IDiscriminatingRangeProcessor`1.Apply(OfficeOpenXml.ExcelRange,`0)">
+            <summary>
+            Применить обработчик
+            </summary>
+            <param name="range">Область</param>
+            <param name="model">Модель</param>
+        </member>
+        <member name="M:TsSoft.Excel.RangeProcessors.DiscriminatingRangeProcessor`1.Apply(OfficeOpenXml.ExcelRange)">
+            <summary>
+            Применить обработчик
+            </summary>
+            <param name="range">Область</param>
+        </member>
+        <member name="M:TsSoft.Excel.RangeProcessors.DiscriminatingRangeProcessor`1.Apply(OfficeOpenXml.ExcelRange,`0)">
+            <summary>
+            Применить обработчик
+            </summary>
+            <param name="range">Область</param>
+            <param name="model">Модель</param>
+        </member>
+        <member name="T:TsSoft.Excel.RangeProcessors.ITableRowDiscriminatingRangeProcessor`1">
+            <summary>
+            Обработчик области для строки таблицы, принимающий модель
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor`1">
+            <summary>
+            Обработчик строк таблицы
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor`1.ShouldApply(`0)">
+            <summary>
+            Нужно ли обрабатывать строку
+            </summary>
+            <param name="model">Модель, по которой сгенерирована строка</param>
+        </member>
+        <member name="T:TsSoft.Excel.RangeProcessors.TableRowDiscriminatingRangeProcessor`1">
+            <summary>
+            Обработчик области для строки таблицы, принимающий модель
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.RangeProcessors.TableRowDiscriminatingRangeProcessor`1.ShouldApply(`0)">
+            <summary>
+            Следует ли применять обработчик
+            </summary>
+            <param name="model">Модель для генерации строки</param>
+        </member>
+        <member name="T:TsSoft.Excel.Stylizers.DiscriminatingStylizer`1">
+            <summary>
+            Стилизатор диапазона ячеек, зависящий от модели
+            </summary>
+            <typeparam name="T">Тип модели</typeparam>
+        </member>
+        <member name="T:TsSoft.Excel.Stylizers.IDiscriminatingStylizer`1">
+            <summary>
+            Стилизатор диапазона ячеек, зависящий от модели
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Stylizers.IStylizer">
+            <summary>
+            Стилизатор диапазона ячеек
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Stylizers.IStylizer.Apply(OfficeOpenXml.Style.ExcelStyle)">
+            <summary>
+            Применить стилизатор
+            </summary>
+            <param name="style">Стиль диапазона ячеек</param>
+        </member>
+        <member name="M:TsSoft.Excel.Stylizers.IDiscriminatingStylizer`1.Apply(OfficeOpenXml.Style.ExcelStyle,`0)">
+            <summary>
+            Применить стилизатор
+            </summary>
+            <param name="style">Стиль диапазона ячеек</param>
+            <param name="model">Использованная для диапазона ячеек модель</param>
+        </member>
+        <member name="M:TsSoft.Excel.Stylizers.DiscriminatingStylizer`1.Apply(OfficeOpenXml.Style.ExcelStyle)">
+            <summary>
+            Применить стилизатор
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Stylizers.DiscriminatingStylizer`1.Apply(OfficeOpenXml.Style.ExcelStyle,`0)">
+            <summary>
+            Применить стилизатор
+            </summary>
+            <param name="style">Стиль диапазона ячеек</param>
+            <param name="model">Модель, по которой сгенерировано содержимое диапазона</param>
+        </member>
+        <member name="T:TsSoft.Excel.Stylizers.ITableRowDiscriminatingStylizer`1">
+            <summary>
+            Стилизатор строки, зависящий от модели
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Stylizers.ITableRowStylizer`1">
+            <summary>
+            Стилизатор для строк таблицы
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Stylizers.ITableRowStylizer`1.ShouldApply(`0)">
+            <summary>
+            Нужно ли стилизовать строку
+            </summary>
+            <param name="model">Модель, по которой сгенерирована строка</param>
+        </member>
+        <member name="T:TsSoft.Excel.RangeProcessors.TableRowAggregateRowProcessor`1">
+            <summary>
+            Обработчик строки, последовательно применяющий несколько обработчиков
+            </summary>
+            <typeparam name="T">Тип модели строки</typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.RangeProcessors.TableRowAggregateRowProcessor`1.#ctor(System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.RangeProcessors.ITableRowRangeProcessor{`0}})">
+            <summary>
+            Обработчик строки, последовательно применяющий несколько обработчиков
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.RangeProcessors.TableRowAggregateRowProcessor`1.Apply(OfficeOpenXml.ExcelRange,`0)">
+            <summary>
+            Применить обработчик
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.RangeProcessors.TableRowAggregateRowProcessor`1.ShouldApply(`0)">
+            <summary>
+            Следует ли применять обработчик
+            </summary>
+        </member>
+        <member name="T:TsSoft.Excel.Stylizers.TableRowDiscriminatingStylizer`1">
+            <summary>
+            Стилизатор строки, зависящий от модели
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Stylizers.TableRowDiscriminatingStylizer`1.ShouldApply(`0)">
+            <summary>
+            Применять ли стилизатор к строке
+            </summary>
+            <param name="model">Модель, по которой сгенерирована строка</param>
+        </member>
+        <member name="T:TsSoft.Excel.Stylizers.TableRowAggregateStylizer`1">
+            <summary>
+            Стилизатор строки, последовательно применяющий несколько стилизаторов
+            </summary>
+            <typeparam name="T">Тип модели строки</typeparam>
+        </member>
+        <member name="M:TsSoft.Excel.Stylizers.TableRowAggregateStylizer`1.#ctor(System.Collections.Generic.IReadOnlyCollection{TsSoft.Excel.Stylizers.ITableRowStylizer{`0}})">
+            <summary>
+            Стилизатор, последовательно применяющий несколько стилизаторов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Excel.Stylizers.TableRowAggregateStylizer`1.Apply(OfficeOpenXml.Style.ExcelStyle,`0)">
+            <summary>
+            Применить стилизатор
+            </summary>
+            <param name="style">Стиль</param>
+            <param name="model">Модель</param>
+        </member>
+        <member name="M:TsSoft.Excel.Stylizers.TableRowAggregateStylizer`1.ShouldApply(`0)">
+            <summary>
+            Следует ли применять стилизатор
+            </summary>
+            <param name="model">Модель</param>
+        </member>
+    </members>
+</doc>

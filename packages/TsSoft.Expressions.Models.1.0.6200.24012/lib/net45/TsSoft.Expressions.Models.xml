@@ -1,0 +1,1843 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TsSoft.Expressions.Models</name>
+    </assembly>
+    <members>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.GeneratorContext">
+            <summary>
+            Контекст генерации селектов или инклюдов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.GeneratorContext.RemainingNestingLevel">
+            <summary>
+            Остающееся количество уровней вложенности для типов генераторов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.AbstractMapper.GeneratorContext.#ctor">
+            <summary>
+            Контекст генерации селектов или инклюдов
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.AbstractMapper.GeneratorContext.#ctor(System.Type,System.Int32)">
+            <summary>
+            Контекст генерации селектов или инклюдов
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.ICyclePreventingGenerator">
+            <summary>
+            Интерфейс генератора, способного включить себя в качестве зависимого генератора
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.ICyclePreventingGenerator.MaxNestingLevel">
+            <summary>
+            Максимальное количество вложений генератора в себя
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.INestedGenerationContext">
+            <summary>
+            Интерфейс контекста для генерации с возможным вложением
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.INestedGenerationContext.RemainingNestingLevel">
+            <summary>
+            Остающееся количество уровней вложенности для типов генераторов
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.MappedPathDescription">
+            <summary>
+            Описание использованного при построении expression для маппера пути
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MappedPathDescription.Path">
+            <summary>
+            Путь - последовательность используемых свойств
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MappedPathDescription.ToPath">
+            <summary>
+            Куда размаплено
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MappedPathDescription.MapperDescription">
+            <summary>
+            Описание маппера, необходимого для преобразования
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MappedPathDescription.ProcessorDescription">
+            <summary>
+            Описание используемого при преобразовании внутреннего обработчика
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.MappedPropertyDescription">
+            <summary>
+            Описание маппинга для свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MappedPropertyDescription.MapExpression">
+            <summary>
+            Построенное выражение
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MappedPropertyDescription.MapperDescription">
+            <summary>
+            Описание необходимого для маппинга маппера
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.MapperDescription">
+            <summary>
+            Описание маппера
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MapperDescription.MapperFromType">
+            <summary>
+            Генерик-параметр интерфейса использованного маппера 
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MapperDescription.MapperFromSingleType">
+            <summary>
+            В случае, если MapperFromType - коллекция, - тип элемента коллекции, иначе MapperFromType
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MapperDescription.MapperToType">
+            <summary>
+            Генерик-параметр интерфейса использованного маппера 
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MapperDescription.MapperToSingleType">
+            <summary>
+            В случае, если MapperToType - коллекция, - тип элемента коллекции, иначе MapperToType
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MapperDescription.MapperObject">
+            <summary>
+            Маппер (заполняется, только если внутренний маппер создаётся во время создания внешнего)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.AbstractMapper.MapperDescription.#ctor(System.Type,System.Type,System.Type)">
+            <summary>
+            Описание маппера
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.AbstractMapper.MapperDescription.#ctor(System.Type,System.Type,System.Type,System.Type)">
+            <summary>
+            Описание маппера
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.AbstractMapper.MapperDescription.ToString">
+            <summary>
+            Строковое представление
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.MapperExpression`2">
+            <summary>
+            Выражение для маппинга
+            </summary>
+            <typeparam name="TFrom">Тип, из которого происходит маппинг</typeparam>
+            <typeparam name="TTo">Тип, в который происходит маппинг</typeparam>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MapperExpression`2.Expression">
+            <summary>
+            Выражение-преобразователь
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.MapperExpression`2.MappedPaths">
+            <summary>
+            Использованные при преобразовании пути
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.PathDescription">
+            <summary>
+            Описание пути
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.PathDescription.Path">
+            <summary>
+            Последовательность свойств в пути
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.PathDescription.Expression">
+            <summary>
+            Expression, выдёргивающий значение из размапливаемого объекта
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.ProcessorDescription">
+            <summary>
+            Описание внутреннего для маппера преобразователя
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.ProcessorDescription.Processor">
+            <summary>
+            Внутренний преобразователь
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.ProcessorDescription.ProcessedType">
+            <summary>
+            Тип, принимаемый внутренним преобразователем
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.AbstractMapper.ProcessorDescription.#ctor(System.Object,System.Type)">
+            <summary>
+            Описание внутреннего для маппера преобразователя
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.AbstractMapper.SelectMemberAssignment">
+            <summary>
+            Модель элемента селект-выражения
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.SelectMemberAssignment.UsedMember">
+            <summary>
+            Использованное свойство сущности
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.SelectMemberAssignment.Condition">
+            <summary>
+            Условие, наложенное на свойство-коллекцию
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.SelectMemberAssignment.InnerSelect">
+            <summary>
+            Селект-выражение для свойства-коллекции
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.AbstractMapper.SelectMemberAssignment.InnerAssignment">
+            <summary>
+            Выражение инициализации для свойства-класса
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.CollectionDiff`1">
+            <summary>
+            Различие в коллекциях
+            </summary>
+            <typeparam name="T">Тип элемента коллекции</typeparam>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.CollectionDiff`1.FirstExcess">
+            <summary>
+            Присутствующие в первой и отсутствующие во второй коллекции элементы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.CollectionDiff`1.SecondExcess">
+            <summary>
+            Присутствующие во второй и отсутствующие в первой коллекции элементы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.CollectionDiff`1.Diffs">
+            <summary>
+            Присутствующие в обеих коллекциях элементы и различия между ними (экземпляры объектов берутся из первой коллекции)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.CollectionDiff`1.FirstIsNull">
+            <summary>
+            Является ли первая коллекция null
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.CollectionDiff`1.SecondIsNull">
+            <summary>
+            Является ли вторая коллекция null
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.ICollectionDiff">
+            <summary>
+            Различие в коллекциях
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.ICollectionDiff`1">
+            <summary>
+            Различие в коллекциях
+            </summary>
+            <typeparam name="T">Тип элемента коллекции</typeparam>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.ICollectionDiff`1.Diffs">
+            <summary>
+            Присутствующие в обеих коллекциях элементы и различия между ними (экземпляры объектов берутся из первой коллекции)
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.IDiff">
+            <summary>
+            Различие в значениях свойства
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.IObjectDiff">
+            <summary>
+            Различия в объектах
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Differences.IObjectDiff.PrimitiveDiff``1(System.String)">
+            <summary>
+            Получить различие в значениях простого свойства объекта
+            </summary>
+            <typeparam name="TProp">Тип значения свойства</typeparam>
+            <param name="propertyName">Имя свойства</param>
+            <returns>Различие в значениях свойства или null, если различий нет</returns>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Differences.IObjectDiff.SubobjectDiff``1(System.String)">
+            <summary>
+            Получить различие в значениях простого свойства объекта
+            </summary>
+            <typeparam name="TProp">Тип значения свойства</typeparam>
+            <param name="propertyName">Имя свойства</param>
+            <returns>Различие в значениях свойства или null, если различий нет</returns>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Differences.IObjectDiff.CollectionDiff``1(System.String)">
+            <summary>
+            Получить различие в значениях простого свойства объекта
+            </summary>
+            <typeparam name="TPropElem">Тип значения элемента свойства</typeparam>
+            <param name="propertyName">Имя свойства</param>
+            <returns>Различие в значениях свойства или null, если различий нет</returns>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IObjectDiff.FirstIsNull">
+            <summary>
+            Является ли первый объект null
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IObjectDiff.SecondIsNull">
+            <summary>
+            Является ли второй объект null
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.IObjectDiff`1">
+            <summary>
+            Различия в объектах
+            <typeparam name="T">Тип объекта</typeparam>
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.IObjectWithDiff`1">
+            <summary>
+            Объект и его различия с другим объектом
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IObjectWithDiff`1.Object">
+            <summary>
+            Объект
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IObjectWithDiff`1.Diff">
+            <summary>
+            Различия
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.ObjectWithDiff`1">
+            <summary>
+            Объект и его различия с другим объектом
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.ObjectWithDiff`1.Object">
+            <summary>
+            Объект
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.ObjectWithDiff`1.Diff">
+            <summary>
+            Различия
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.IPrimitiveCollectionDiff">
+            <summary>
+            Различия в коллекциях простых элементов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IPrimitiveCollectionDiff.FirstIsNull">
+            <summary>
+            Является ли первая коллекция null
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IPrimitiveCollectionDiff.SecondIsNull">
+            <summary>
+            Является ли вторая коллекция null
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.IPrimitiveCollectionDiff`1">
+            <summary>
+            Различия в коллекциях простых элементов
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IPrimitiveCollectionDiff`1.FirstExcess">
+            <summary>
+            Присутствующие в первой и отсутствующие во второй коллекции элементы
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IPrimitiveCollectionDiff`1.SecondExcess">
+            <summary>
+            Присутствующие во второй и отсутствующие в первой коллекции элементы
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.IPrimitiveDiff">
+            <summary>
+            Различие в значениях простого свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IPrimitiveDiff.Type">
+            <summary>
+            Тип значения свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IPrimitiveDiff.First">
+            <summary>
+            Значение в первом объекте
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IPrimitiveDiff.Second">
+            <summary>
+            Значение во втором объекте
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.IPrimitiveDiff`1">
+            <summary>
+            Различие в значениях простого свойства
+            </summary>
+            <typeparam name="T">Тип свойства</typeparam>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IPrimitiveDiff`1.First">
+            <summary>
+            Значение в первом объекте
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.IPrimitiveDiff`1.Second">
+            <summary>
+            Значение во втором объекте
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.ObjectDiff">
+            <summary>
+            Различия в значениях объекта
+            </summary>
+        </member>
+        <member name="F:TsSoft.Expressions.Models.Differences.ObjectDiff._propertyDiffs">
+            <summary>
+            Различия в свойствах объекта
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Differences.ObjectDiff.PrimitiveDiff``1(System.String)">
+            <summary>
+            Получить различие в значениях простого свойства объекта
+            </summary>
+            <typeparam name="T">Тип значения свойства</typeparam>
+            <param name="propertyName">Имя свойства</param>
+            <returns>Различие в значениях свойства или null, если различий нет</returns>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Differences.ObjectDiff.SubobjectDiff``1(System.String)">
+            <summary>
+            Получить различие в значениях простого свойства объекта
+            </summary>
+            <typeparam name="T">Тип значения свойства</typeparam>
+            <param name="propertyName">Имя свойства</param>
+            <returns>Различие в значениях свойства или null, если различий нет</returns>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Differences.ObjectDiff.CollectionDiff``1(System.String)">
+            <summary>
+            Получить различие в значениях простого свойства объекта
+            </summary>
+            <typeparam name="T">Тип значения элемента свойства</typeparam>
+            <param name="propertyName">Имя свойства</param>
+            <returns>Различие в значениях свойства или null, если различий нет</returns>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.ObjectDiff.FirstIsNull">
+            <summary>
+            Является ли первый объект null
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.ObjectDiff.SecondIsNull">
+            <summary>
+            Является ли второй объект null
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Differences.ObjectDiff.AddDiff(System.Reflection.PropertyInfo,TsSoft.Expressions.Models.Differences.IDiff)">
+            <summary>
+            Добавить различие в свойстве
+            </summary>
+            <param name="property">Свойство</param>
+            <param name="diff">Различие</param>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.ObjectDiff.HasDiffs">
+            <summary>
+            Имеются ли различия
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.ObjectDiff`1">
+            <summary>
+            Различия в объектах
+            <typeparam name="T">Тип объекта</typeparam>
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Differences.PrimitiveDiff`1">
+            <summary>
+            Изменение простого свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.PrimitiveDiff`1.Type">
+            <summary>
+            Тип свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.PrimitiveDiff`1.TsSoft#Expressions#Models#Differences#IPrimitiveDiff#First">
+            <summary>
+            Значение свойства в первом объекте
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.PrimitiveDiff`1.TsSoft#Expressions#Models#Differences#IPrimitiveDiff#Second">
+            <summary>
+            Значение свойства во втором объекте
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.PrimitiveDiff`1.First">
+            <summary>
+            Значение свойства в первом объекте
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Differences.PrimitiveDiff`1.Second">
+            <summary>
+            Значение свойства во втором объекте
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Multidictionary`2">
+            <summary>
+            Мультисловарь
+            </summary>
+            <typeparam name="TKey">Тип ключа</typeparam>
+            <typeparam name="TValue">Тип значения</typeparam>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0},System.Collections.Generic.IEqualityComparer{`1})">
+            <summary>
+            Мультисловарь
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.Contains(`0)">
+            <summary>
+            Содержится ли ключ в словаре
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ISet{`1}})">
+            <summary>
+            Добавить значения для ключа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.Add(`0,`1)">
+            <summary>
+            Добавить значение для ключа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.GetEnumerator">
+            <summary>
+            Получить перечислитель
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.Clear">
+            <summary>
+            Очистить словарь
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ISet{`1}})">
+            <summary>
+            Содержит ли словарь все ключи для значения
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ISet{`1}}[],System.Int32)">
+            <summary>
+            Скопировать словарь в массив
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ISet{`1}})">
+            <summary>
+            Удалить значения из ключа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Multidictionary`2.Count">
+            <summary>
+            Количество ключей в словаре
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Multidictionary`2.IsReadOnly">
+            <summary>
+            False
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.ContainsKey(`0)">
+            <summary>
+            Содержит ли словарь ключ
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.Add(`0,System.Collections.Generic.ISet{`1})">
+            <summary>
+            Добавить значения для ключа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.Remove(`0)">
+            <summary>
+            Удалить ключ из словаря
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Multidictionary`2.TryGetValue(`0,System.Collections.Generic.ISet{`1}@)">
+            <summary>
+            Попытаться получить значения по ключу
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Multidictionary`2.Item(`0)">
+            <summary>
+            Получить значения по ключу
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Multidictionary`2.Keys">
+            <summary>
+            Ключи
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Multidictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ISet{TValue}}#Values">
+            <summary>
+            Значения
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.ExpressionWithPrecondition">
+            <summary>
+            Выражение с условием возможности его вычисления
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.ExpressionWithPrecondition.Expression">
+            <summary>
+            Выражение
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.ExpressionWithPrecondition.Precondition">
+            <summary>
+            Условие, при невыполнении которого выражение выполнить невозможно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.ExpressionWithPrecondition.#ctor(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)">
+            <summary>
+            Выражение с условием возможности его вычисления
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.ExpressionWithPrecondition.Type">
+            <summary>
+            Тип выражения
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.ExpressionWithPrecondition.NodeType">
+            <summary>
+            Тип узла
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.ParsedPathBuilder">
+            <summary>
+            Построитель пути
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.ParsedPathBuilder.#ctor(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Создать построитель пути по началу пути
+            </summary>
+            <param name="start">Параметр пути</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.ParsedPathBuilder.AddElement(TsSoft.Expressions.Models.Path.PathElement)">
+            <summary>
+            Добавить элемент в построитель пути
+            </summary>
+            <param name="element">Новый элемент</param>
+            <returns>Построитель пути с добавленным элементом</returns>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.ParsedPathBuilder.ToPath">
+            <summary>
+            Извлечь путь из построителя
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.PathExpression">
+            <summary>
+            Выражение для представления пути
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathExpression.Path">
+            <summary>
+            Путь
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathExpression.Type">
+            <summary>
+            Тип, получаемый на пути
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.PathExpression.#ctor(TsSoft.Expressions.Models.Path.ParsedPath,System.Type)">
+            <summary>
+            Создать выражение для представления пути
+            </summary>
+            <param name="path">Путь</param>
+            <param name="type">Тип, получаемый на пути</param>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.ParsedPath">
+            <summary>
+            Результат разбора выражения пути
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.ParsedPath.Elements">
+            <summary>
+            Элементы пути - свойства и условия
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.ParsedPath.Start">
+            <summary>
+            Выражение, к которому применяется путь
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.ParsedPath.AdditionalPaths">
+            <summary>
+            Дополнительно используемые пути - из условий на свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.ParsedPath.Branches">
+            <summary>
+            Ветвления основного пути
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.ParsedPath.#ctor(System.Collections.Generic.IReadOnlyList{TsSoft.Expressions.Models.Path.PathElement},System.Linq.Expressions.ParameterExpression,System.Linq.ILookup{System.Linq.Expressions.ParameterExpression,TsSoft.Expressions.Models.Path.ParsedPath})">
+            <summary>
+            Результат разбора выражения пути
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.ParsedPath.ElementAt(System.Int32)">
+            <summary>
+            Получить элемент пути по индексу
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.ParsedPath.LastElement">
+            <summary>
+            Получить последний элемент пути
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.ParsedPath.ToString">
+            <summary>
+            Получить строковое представление
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.PathCondition">
+            <summary>
+            Внутреннее условие пути
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathCondition.Start">
+            <summary>
+            Параметр лямбды с условием
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathCondition.DbCondition">
+            <summary>
+            Условие для передачи в EF
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathCondition.ServerCondition">
+            <summary>
+            Условие для обработки на сервере (оснащённое проверками на null)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathCondition.UsedPaths">
+            <summary>
+            Использованные при построении условия пути
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathCondition.ConditionMethod">
+            <summary>
+            Метод, в котором было использовано условие
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.PathCondition.#ctor(System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.LambdaExpression,System.Linq.ILookup{System.Linq.Expressions.ParameterExpression,TsSoft.Expressions.Models.Path.ParsedPath},System.Reflection.MethodInfo)">
+            <summary>
+            Внутреннее условие пути
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.PathElement">
+            <summary>
+            Элемент пути из свойств
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathElement.Step">
+            <summary>
+            Свойство-шаг
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathElement.Conditions">
+            <summary>
+            Условие на шаг
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathElement.Parameter">
+            <summary>
+            Параметр, которому соответствует результат применения шага
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.PathElement.#ctor(TsSoft.Expressions.Models.ValueHoldingMember,TsSoft.Expressions.Models.Path.PathCondition)">
+            <summary>
+            Элемент пути из свойств
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.PathElement.AddCondition(TsSoft.Expressions.Models.Path.PathCondition)">
+            <summary>
+            Навесить условие на элемент пути
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.PathElement.SetParameter(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Установить параметр, которому соответствует результат применения шага
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.PathElement.AppendTo(System.Text.StringBuilder)">
+            <summary>
+            Записать строковое представление
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.PathElement.ToString">
+            <summary>
+            Получить строковое представление
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.PathExpressionContainer">
+            <summary>
+            Выражение, использующее множество путей
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathExpressionContainer.InnerPaths">
+            <summary>
+            Пути
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathExpressionContainer.Expression">
+            <summary>
+            Исходное выражение
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathExpressionContainer.IsNullEqualityComparison">
+            <summary>
+            Является ли выражение сравнением с null
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.PathExpressionContainer.Type">
+            <summary>
+            Тип выражения
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.PathExpressionContainer.#ctor(System.Collections.Generic.IReadOnlyCollection{TsSoft.Expressions.Models.Path.ParsedPath},System.Linq.Expressions.Expression,System.Boolean)">
+            <summary>
+            Создать выражение, использующее множество путей
+            </summary>
+            <param name="innerPaths">Используемые пути</param>
+            <param name="expression">Выражение</param>
+            <param name="isNullEqualityComparison">Является ли выражение сравнением с null</param>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.SelectTree">
+            <summary>
+            Дерево свойств для выборки
+            </summary>
+        </member>
+        <member name="F:TsSoft.Expressions.Models.Path.SelectTree.ExhaustedNesting">
+            <summary>
+            Специальный экземпляр дерева свойств для представления пустого продолжения
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SelectTree.Start">
+            <summary>
+            Стартовый параметр путей
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SelectTree.RootNode">
+            <summary>
+            Узел верхнего уровня (узел выбираемой сущности)
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SelectTree.ExternalIncludes">
+            <summary>
+            Внешние инклюды
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTree.#ctor(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Дерево свойств для выборки
+            </summary>
+            <param name="start">Стартовый параметр</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTree.#ctor(System.Linq.Expressions.ParameterExpression,TsSoft.Expressions.Models.Path.SelectTreeNode)">
+            <summary>
+            Дерево свойств для выборки
+            </summary>
+            <param name="start">Стартовый параметр</param>
+            <param name="node">Корневой узел</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTree.#ctor(System.Linq.Expressions.ParameterExpression,TsSoft.Expressions.Models.Path.SelectTreeLevel)">
+            <summary>
+            Дерево свойств для выборки
+            </summary>
+            <param name="start">Стартовый параметр</param>
+            <param name="firstLevel">Первый уровень дерева выбранных свойств</param>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.SelectTreeLevel">
+            <summary>
+            Набор свойств, выбранных из сущности
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeLevel.#ctor">
+            <summary>
+            Набор свойств, выбранных из сущности
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeLevel.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{TsSoft.Expressions.Models.ValueHoldingMember,TsSoft.Expressions.Models.Path.SelectTreeNode}})">
+            <summary>
+            Набор свойств, выбранных из сущности
+            </summary>
+            <param name="nodes">Свойства с подсвойствами</param>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.SelectTreeNode">
+            <summary>
+            Элемент дерева свойств для выборки
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SelectTreeNode.Type">
+            <summary>
+            Тип выбранной сущности
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SelectTreeNode.NextLevel">
+            <summary>
+            Выбранные из сущности свойства и их поддеревья
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SelectTreeNode.SelectParameters">
+            <summary>
+            Параметры Enumerable.Select
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SelectTreeNode.ConditionParameters">
+            <summary>
+            Параметры Enumerable.Select
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SelectTreeNode.Condition">
+            <summary>
+            Условие
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeNode.#ctor(System.Type)">
+            <summary>
+            Элемент дерева свойств для выборки
+            </summary>
+            <param name="type">Тип выбранной сущности</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeNode.#ctor(System.Type,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Элемент дерева свойств для выборки
+            </summary>
+            <param name="type">Тип выбранной сущности</param>
+            <param name="condition">Условие на сущности</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeNode.AddSelectParameter(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Добавить параметр Enumerable.Select
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeNode.AddSelectParameters(System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})">
+            <summary>
+            Добавить параметры Enumerable.Select
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeNode.AddConditionParameter(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Добавить параметр Enumerable.Where
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeNode.AddCondition(System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Добавить условие с параметрами
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeNode.AddConditions(System.Collections.Generic.IEnumerable{System.Linq.Expressions.LambdaExpression})">
+            <summary>
+            Добавить условия с параметрами, объединяя их AndAlso
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeNode.AddCondition(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})">
+            <summary>
+            Добавить условие с параметрами
+            </summary>
+            <param name="addedCondition">Тело условия</param>
+            <param name="parameters">Использованные в теле для обозначения сущности параметры</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SelectTreeNode.AddNullCondition">
+            <summary>
+            Удалить условие
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Path.SplitSelectTree">
+            <summary>
+            Разбиение дерева свойств для выборки на внутренние и внешние свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SplitSelectTree.InternalTree">
+            <summary>
+            Дерево внутренних свойств
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Path.SplitSelectTree.ExternalTrees">
+            <summary>
+            Пути к внешним свойствам и деревья выбора внутри них
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Path.SplitSelectTree.#ctor(TsSoft.Expressions.Models.Path.SelectTree,System.Collections.Generic.IReadOnlyCollection{System.Collections.Generic.KeyValuePair{System.Collections.Generic.IReadOnlyCollection{TsSoft.Expressions.Models.ValueHoldingMember},TsSoft.Expressions.Models.Path.SelectTreeNode}})">
+            <summary>
+            Разбиение дерева свойств для выборки на внутренние и внешние свойства
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Reflection.ClonedPropertyManager">
+            <summary>
+            Настройки копирования свойств
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Reflection.ClonedPropertyManager.Copy">
+            <summary>
+            Делать shallow copy свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Reflection.ClonedPropertyManager.SingleClone">
+            <summary>
+            Делать deep copy свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Reflection.ClonedPropertyManager.CollectionClone">
+            <summary>
+            Делать deep copy элементов свойства-коллекции
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.ClonedPropertyManager.#ctor(System.Func{TsSoft.Expressions.Models.ValueHoldingMember,System.Boolean},System.Func{TsSoft.Expressions.Models.ValueHoldingMember,System.Boolean},System.Func{TsSoft.Expressions.Models.ValueHoldingMember,System.Boolean})">
+            <summary>
+            Настройки копирования свойств
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.ClonedPropertyManager.#ctor(System.Func{System.Reflection.PropertyInfo,System.Boolean},System.Func{System.Reflection.PropertyInfo,System.Boolean},System.Func{System.Reflection.PropertyInfo,System.Boolean})">
+            <summary>
+            Настройки копирования свойств
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Reflection.IObjectUpdateManager">
+            <summary>
+            Настройки обновления свойств
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.IObjectUpdateManager.IsPrimitive(System.Type)">
+            <summary>
+            Обновлять копированием (примитивные свойства)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.IObjectUpdateManager.IsObject(System.Type)">
+            <summary>
+            Обновлять по свойствам (свойства-объекты)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.IObjectUpdateManager.IsCollection(System.Type)">
+            <summary>
+            Обновлять поэлементно (свойства-коллекции)
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.IObjectUpdateManager.MakeRemoveCollectionExpression(TsSoft.Expressions.Models.ValueHoldingMember,System.Type,System.Linq.Expressions.Expression)">
+            <summary>
+            Построить выражение для очищения коллекции
+            </summary>
+            <param name="collectionProperty">Свойство-коллекция</param>
+            <param name="objectType">Тип содержащего коллекцию объекта</param>
+            <param name="target">Содержащий коллекцию объект</param>
+            <returns>Выражение, очищающее коллекцию</returns>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.IObjectUpdateManager.MakeAsyncRemoveCollectionExpression(TsSoft.Expressions.Models.ValueHoldingMember,System.Type,System.Linq.Expressions.Expression)">
+            <summary>
+            Построить выражение для асинхронного очищения коллекции
+            </summary>
+            <param name="collectionProperty">Свойство-коллекция</param>
+            <param name="objectType">Тип содержащего коллекцию объекта</param>
+            <param name="target">Содержащий коллекцию объект</param>
+            <returns>Выражение, очищающее коллекцию</returns>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.IObjectUpdateManager.MakeRemoveCollectionPartExpression(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)">
+            <summary>
+            Построить выражение, удаляющее элементы коллекции, присутствующие в target, но отсутствующие в source
+            </summary>
+            <param name="source">Источник обновления - какие элементы надо сохранить</param>
+            <param name="target">Цель обновления - какие элементы были (среди них могут быть удалённые)</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.IObjectUpdateManager.MakeAsyncRemoveCollectionPartExpression(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)">
+            <summary>
+            Построить выражение, асинхронно удаляющее элементы коллекции, присутствующие в target, но отсутствующие в source
+            </summary>
+            <param name="source">Источник обновления - какие элементы надо сохранить</param>
+            <param name="target">Цель обновления - какие элементы были (среди них могут быть удалённые)</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Reflection.IObjectUpdateManager.MakeExtractKeyExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Построить выражение для получения ключа объекта
+            </summary>
+            <param name="obj">Объект</param>
+            <returns>Выражение, получающее ключ объекта</returns>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.IEquatableTuple">
+            <summary>
+            Интерфейс сравнимых кортежей
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.IEquatableTuple.Size">
+            <summary>
+            Размер кортежа
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.EquatableTuple">
+            <summary>
+            Фабрика кортежей
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple.Create``1(``0)">
+            <summary>
+            Создать кортеж размера 1
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple.Create``2(``0,``1)">
+            <summary>
+            Создать кортеж размера 2
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple.Create``3(``0,``1,``2)">
+            <summary>
+            Создать кортеж размера 3
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple.Create``4(``0,``1,``2,``3)">
+            <summary>
+            Создать кортеж размера 4
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple.Create``5(``0,``1,``2,``3,``4)">
+            <summary>
+            Создать кортеж размера 5
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple.Create``6(``0,``1,``2,``3,``4,``5)">
+            <summary>
+            Создать кортеж размера 6
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple.Create``7(``0,``1,``2,``3,``4,``5,``6)">
+            <summary>
+            Создать кортеж размера 7
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple.Create``8(``0,``1,``2,``3,``4,``5,``6,``7)">
+            <summary>
+            Создать кортеж размера 8
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple.GetItemProperty(System.Type,System.Int32)">
+            <summary>
+            Получить свойство с элементом кортежа
+            </summary>
+            <param name="equatableTupleType">Тип кортежа</param>
+            <param name="itemIndex">Индекс элемента (нумерация начинается с 0)</param>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.EquatableTuple`1">
+            <summary>
+            Кортеж размера 1
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`1.Item1">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`1.#ctor(`0)">
+            <summary>
+            Кортеж размера 1
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`1.Equals(System.Object)">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`1.GetHashCode">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`1.Equals(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`1.op_Equality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`1.op_Inequality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0})">
+            <summary>
+            Не равно
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`1.Size">
+            <summary>
+            Размер кортежа
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.EquatableTuple`2">
+            <summary>
+            Кортеж размера 2
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`2.Item1">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`2.Item2">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`2.#ctor(`0,`1)">
+            <summary>
+            Кортеж размера 2
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`2.Equals(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`2.Equals(System.Object)">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`2.GetHashCode">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`2.op_Equality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`2.op_Inequality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1})">
+            <summary>
+            Не равно
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`2.Size">
+            <summary>
+            Размер кортежа
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.EquatableTuple`3">
+            <summary>
+            Кортеж размера 3
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.Item1">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.Item2">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.Item3">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.#ctor(`0,`1,`2)">
+            <summary>
+            Кортеж размера 3
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.Size">
+            <summary>
+            Размер кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.op_Equality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.op_Inequality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2})">
+            <summary>
+            Не равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.Equals(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.Equals(System.Object)">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`3.GetHashCode">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.EquatableTuple`4">
+            <summary>
+            Кортеж размера 4
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.Item1">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.Item2">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.Item3">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.Item4">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.#ctor(`0,`1,`2,`3)">
+            <summary>
+            Кортеж размера 4
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.Size">
+            <summary>
+            Размер кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.op_Equality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.op_Inequality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3})">
+            <summary>
+            Не равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.Equals(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.Equals(System.Object)">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`4.GetHashCode">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.EquatableTuple`5">
+            <summary>
+            Кортеж размера 5
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.Item1">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.Item2">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.Item3">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.Item4">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.Item5">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.#ctor(`0,`1,`2,`3,`4)">
+            <summary>
+            Кортеж размера 5
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.Size">
+            <summary>
+            Размер кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.op_Equality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.op_Inequality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4})">
+            <summary>
+            Не равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.Equals(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.Equals(System.Object)">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`5.GetHashCode">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.EquatableTuple`6">
+            <summary>
+            Кортеж размера 6
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.Item1">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.Item2">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.Item3">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.Item4">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.Item5">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.Item6">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.#ctor(`0,`1,`2,`3,`4,`5)">
+            <summary>
+            Кортеж размера 6
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.Size">
+            <summary>
+            Размер кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.op_Equality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.op_Inequality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5})">
+            <summary>
+            Не равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.Equals(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.Equals(System.Object)">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`6.GetHashCode">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.EquatableTuple`7">
+            <summary>
+            Кортеж размера 7
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Item1">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Item2">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Item3">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Item4">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Item5">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Item6">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Item7">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.#ctor(`0,`1,`2,`3,`4,`5,`6)">
+            <summary>
+            Кортеж размера 7
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Size">
+            <summary>
+            Размер кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.op_Equality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.op_Inequality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6})">
+            <summary>
+            Не равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Equals(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.Equals(System.Object)">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`7.GetHashCode">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.Tuples.EquatableTuple`8">
+            <summary>
+            Кортеж размера 8
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Item1">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Item2">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Item3">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Item4">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Item5">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Item6">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Item7">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Item8">
+            <summary>
+            Элемент кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.#ctor(`0,`1,`2,`3,`4,`5,`6,`7)">
+            <summary>
+            Кортеж размера 8
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Size">
+            <summary>
+            Размер кортежа
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.op_Equality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6,`7},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6,`7})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.op_Inequality(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6,`7},TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6,`7})">
+            <summary>
+            Не равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Equals(TsSoft.Expressions.Models.Tuples.EquatableTuple{`0,`1,`2,`3,`4,`5,`6,`7})">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.Equals(System.Object)">
+            <summary>
+            Равно
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.Tuples.EquatableTuple`8.GetHashCode">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="T:TsSoft.Expressions.Models.ValueHoldingMember">
+            <summary>
+            Свойство или поле
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.IsNull">
+            <summary>
+            Является ли пустым
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.Field">
+            <summary>
+            Поле
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.Property">
+            <summary>
+            Свойство
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.DeclaringType">
+            <summary>
+            Объявивший тип
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.ValueType">
+            <summary>
+            Тип хранимого значения
+            </summary>
+            <exception cref="T:System.NullReferenceException">Пустой член</exception>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.IsWriteable">
+            <summary>
+            Можно ли записать значение
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.IsReadable">
+            <summary>
+            Можно ли считать значение
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetCustomAttribute``1">
+            <summary>
+            Получить атрибут
+            </summary>
+            <typeparam name="T">Тип атрибута</typeparam>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetCustomAttributes``1">
+            <summary>
+            Получить атрибуты
+            </summary>
+            <typeparam name="T">Тип атрибута</typeparam>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.HasAttribute``1">
+            <summary>
+            Имеет ли член атрибут
+            </summary>
+            <typeparam name="T">Тип атрибута</typeparam>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.IsNonPublicPropertyWithGetter">
+            <summary>
+            Является ли непубличным свойством с геттером
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetValue(System.Object)">
+            <summary>
+            Получить значение
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.SetValue(System.Object,System.Object)">
+            <summary>
+            Установить значение
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Создать обёртку для поля или свойства
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.#ctor(System.Reflection.FieldInfo)">
+            <summary>
+            Создать обёртку для поля
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            Создать обёртку для свойства
+            </summary>
+        </member>
+        <member name="P:TsSoft.Expressions.Models.ValueHoldingMember.Member">
+            <summary>
+            Получить обёрнутый член
+            </summary>
+            <exception cref="T:System.NullReferenceException">Член - null</exception>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.Equals(System.Reflection.MemberInfo)">
+            <summary>
+            Равны ли члены
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.Equals(TsSoft.Expressions.Models.ValueHoldingMember)">
+            <summary>
+            Равны ли члены
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.Equals(System.Object)">
+            <summary>
+            Равны ли члены
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetHashCode">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetValueHoldingMember(System.Type,System.String)">
+            <summary>
+            Получить член по типу и имени
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetValueHoldingMembers(System.Type)">
+            <summary>
+            Получить все члены типа, содержащие значение
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetValueHoldingMembers(System.Type,System.Reflection.BindingFlags)">
+            <summary>
+            Получить все члены типа, содержащие значение
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetFromExpression(System.Linq.Expressions.MemberExpression)">
+            <summary>
+            Получить член из выражения
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.ToString">
+            <summary>
+            Строковое представление
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetCustomAttributes(System.Type,System.Boolean)">
+            <summary>
+            Получить атрибуты
+            </summary>
+            <param name="attributeType">Тип атрибута</param>
+            <param name="inherit">Считывать ли атрибуты с базовых типов</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.GetCustomAttributes(System.Boolean)">
+            <summary>
+            Получить атрибуты
+            </summary>
+            <param name="inherit">Считывать ли атрибуты с базовых типов</param>
+        </member>
+        <member name="M:TsSoft.Expressions.Models.ValueHoldingMember.IsDefined(System.Type,System.Boolean)">
+            <summary>
+            Висит ли атрибут
+            </summary>
+            <param name="attributeType">Тип атрибута</param>
+            <param name="inherit">Считывать ли атрибуты с базовых типов</param>
+        </member>
+        <member name="T:TsSoft.Expressions.Helpers.Reflection.MemberInfoComparer">
+            <summary>
+            Сравнивает MemberInfo на равенство, считая равными члены, полученные из базового типа и типа-наследника, если наследник не переопределил член
+            </summary>
+        </member>
+        <member name="F:TsSoft.Expressions.Helpers.Reflection.MemberInfoComparer.Instance">
+            <summary>
+            Сравнивает MemberInfo на равенство, считая равными члены, полученные из базового типа и типа-наследника, если наследник не переопределил член
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Helpers.Reflection.MemberInfoComparer.Equals(System.Reflection.MemberInfo,System.Reflection.MemberInfo)">
+            <summary>
+            Совпадают ли члены
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Helpers.Reflection.MemberInfoComparer.GetHashCode(System.Reflection.MemberInfo)">
+            <summary>
+            Получить хэш члена
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Helpers.Reflection.MemberInfoComparer.Equals(System.Reflection.PropertyInfo,System.Reflection.PropertyInfo)">
+            <summary>
+            Совпадают ли свойства
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Helpers.Reflection.MemberInfoComparer.GetHashCode(System.Reflection.PropertyInfo)">
+            <summary>
+            Получить хэш свойства
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Helpers.Reflection.MemberInfoComparer.Equals(TsSoft.Expressions.Models.ValueHoldingMember,TsSoft.Expressions.Models.ValueHoldingMember)">
+            <summary>
+            Равны ли члены
+            </summary>
+        </member>
+        <member name="M:TsSoft.Expressions.Helpers.Reflection.MemberInfoComparer.GetHashCode(TsSoft.Expressions.Models.ValueHoldingMember)">
+            <summary>
+            Получить хэш члена
+            </summary>
+        </member>
+    </members>
+</doc>
