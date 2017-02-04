@@ -1,7 +1,7 @@
 ﻿(function () {
-    var taskAngular = angular.module('taskAngular');
+    var MmsWebSite = angular.module('MmsWebSite');
 
-    taskAngular.controller('usersController', function ($scope, dataService) {
+    MmsWebSite.controller('usersController', function ($scope, dataService) {
 
         $scope.loadUsers = function () {
             $scope.waitUsers = true;

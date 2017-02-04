@@ -1,8 +1,8 @@
 ﻿(function () {
 
-    var taskAngular = angular.module("taskAngular");
+    var MmsWebSite = angular.module("MmsWebSite");
 
-    taskAngular.factory("dataService", function ($http, $rootScope) {
+    MmsWebSite.factory("dataService", function ($http, $rootScope) {
 
         var source = "http://localhost:64974/api/";
 

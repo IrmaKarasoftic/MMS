@@ -16,12 +16,7 @@ namespace MmsApi.Controllers
         {
             try
             {
-                //var users = Repository.Get().ToList().Select(x => Factory.Create(x)).ToList();
-                var u1 = new User { Id = 1, IsAdmin = false, Name = "irma", Password = "irma", Username = "irma" };
-                var users = new List<User>();
-                users.Add(u1);
-                var u2 = new User { Id = 1, IsAdmin = false, Name = "amra", Password = "amra", Username = "amra" };
-                users.Add(u2);
+                var users = Repository.Get().ToList().Select(x => Factory.Create(x)).ToList();
                 return Ok(users);
             }
             catch (Exception)

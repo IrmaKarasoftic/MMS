@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="taskAngular">
+<html ng-app="MmsWebSite">
 <head>
     <meta charset="utf-8" />
     <title>MMS</title>
@@ -21,10 +21,12 @@
     <script src="scripts/app.js"></script>
     <!-- ANGULAR CONTROLLERS -->
     <script src="scripts/toastr.js"></script>
-    <!--ANGULAR SERVICES-->
-    <script src="scripts/services/dataService.js"></script>
     <script src="scripts/controllers/loginCtrl.js"></script>
     <script src="scripts/controllers/usersCtrl.js"></script>
+    <script src="scripts/controllers/imagesCtrl.js"></script>
+
+    <!--ANGULAR SERVICES-->
+    <script src="scripts/services/dataService.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -39,6 +41,17 @@
                         <small>Projekat</small>
                     </h1>
                 </div>
+
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/login"><strong>Login</strong></a></li>
+                        <li><a href="#/users"><strong>Users</strong></a></li>
+                        <li><a href="#/images"><strong>Images</strong></a></li>
+                        
+                    </ul>
+                </nav>
+
                 <!-- ANGULAR DYNAMIC CONTENT -->
                 <div ng-view></div>
                 <br>

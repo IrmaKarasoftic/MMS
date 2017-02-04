@@ -1,6 +1,6 @@
-﻿<div ng-show="!waitUsers">
-    <h2><i class="fa fa-users"></i>  Customers Management</h2>
-    <div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newCustomerModal" ng-click="loadCompaniesInfo()"><strong>New Customer</strong></a></div>
+﻿<div class="users" ng-show="!waitUsers">
+    <h2><i class="fa fa-users"></i>  Users Management</h2>
+    <div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newCustomerModal" ng-click="loadUsers()"><strong>New User</strong></a></div>
     <br /><br />
     <table class="table table-striped" align="right">
         <thead>
@@ -23,7 +23,7 @@
         </tbody>
     </table>
 </div>
-<div ng-show="waitCustomers">
+<div ng-show="waitUsers">
     <div class="loader">
         <div class="loader-inner">
             <div class="loader-line-wrap">
@@ -44,12 +44,3 @@
         </div>
     </div>
 </div>
-
-<!-- Customer Modal -->
-<div class="modal fade" id="editCustomerModal" role="dialog">
-    <div ng-include="'views/modals/editCustomerModal.html'"></div>
-</div><!--end modal-->
-
-<div class="modal fade" id="newCustomerModal" role="dialog">
-    <div ng-include="'views/modals/newCustomerModal.html'"></div>
-</div><!--end modal-->

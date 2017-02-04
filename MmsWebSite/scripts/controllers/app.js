@@ -1,18 +1,18 @@
 ﻿(function(){
-    var taskAngular = angular.module('taskAngular', ['ngRoute']);
+    var MmsWebSite = angular.module('MmsWebSite', ['ngRoute']);
 
-        taskAngular.config(function ($routeProvider) {
+        MmsWebSite.config(function ($routeProvider) {
 
             $routeProvider
-                .when("/home", {
-                    templateUrl: "views/home.html",
+                .when("/login", {
+                    templateUrl: "views/login.html",
                     controller: "loginController"
                 })
                 .when("/users", {
                     templateUrl: "views/users.html",
                     controller: "usersController"
                 })
-                .when("/customers", {
+                .when("/images", {
                     templateUrl: "views/images.html",
                     controller: "imagesController"
                 })
