@@ -4,11 +4,11 @@
     taskAngular.controller('usersController', function ($scope, dataService) {
 
         $scope.loadUsers = function () {
-            $scope.waitCustomers = true;
-            dataService.get("users", function (data) {
+            $scope.waitUsers = true;
+            dataService.list("users", function (data) {
                 if (data) {
                     $scope.users = data;
-                    $scope.waitCustomers = false;
+                    $scope.waitUsers = false;
                 }
                 else {
                     notificationsConfig.error("Error!");
