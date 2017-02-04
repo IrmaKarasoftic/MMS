@@ -1,9 +1,14 @@
 ﻿<h2><i class="fa fa-building"></i>Images Management</h2>
+
 <br />
+<input type="text" class="form-control pull-left" style="width: 320px; margin-bottom: 0;" placeholder="Search Image" ng-model="imagesFilter">
+
 <div ng-show="!waitImages">
     <div class="companies">
+        <br />
+        <br />
         <div class="glavniDioSlike">
-            <div class="Slika" ng-repeat="image in images" style="width:30%">
+            <div class="Slika" ng-repeat="image in images | filter: {description: imagesFilter}" style="width:30%">
                 <div class="panel-heading">
                     <h3 class="panel-title">Description: {{image.description}}</h3>
                 </div>
