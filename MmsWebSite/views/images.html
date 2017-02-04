@@ -1,5 +1,4 @@
-﻿<h2><i class="fa fa-building"></i>Images Management</h2>
-<div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newImageModal" ng-click="loadImages()"><strong>New Image</strong></a></div>
+﻿<div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newImageModal" ng-click="loadImages()"><strong>New Image</strong></a></div>
 
 <br />
 <input type="text" class="form-control pull-left" style="width: 320px; margin-bottom: 0;" placeholder="Search Image" ng-model="imagesFilter">
@@ -15,6 +14,7 @@
                 </div>
                 <div class="panel-body">
                     <image ng-src="{{image.location}}"></image>
+                    <button class="square-btn square-btn-white square-btn-s" title="Compress image" data-toggle="modal" data-target="#compressImageModal" ng-click="setImageToCompress(image)"><em class="fa fa-compress"></em></button>
                 </div>
             </div>
         </div>
@@ -45,4 +45,7 @@
 
 <div id="newImageModal" class="modal fade" role="dialog">
     <div ng-include="'views/modals/newImageModal.html'"></div>
+</div>
+<div id="compressImageModal" class="modal fade" role="dialog">
+    <div ng-include="'views/modals/compressImageModal.html'"></div>
 </div>

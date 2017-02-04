@@ -8,6 +8,12 @@
             location: ""
         }
 
+        $scope.imageToCompress = {
+            id: 0,
+            description: "",
+            location: ""
+        }
+
         $scope.loadImages = function () {
             $scope.waitImages = true;
             dataService.list("images", function (data) {
@@ -32,6 +38,14 @@
                     else
                         alert("Error");
                 })
+        }
+        $scope.setImageToCompress = function(image)
+        {
+            $scope.imageToCompress = image;
+        }
+
+        $scope.compress = function (image) {
+            //kompresovanje
         }
     });
 }());
