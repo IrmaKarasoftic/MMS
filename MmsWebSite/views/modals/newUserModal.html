@@ -1,0 +1,25 @@
+﻿<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header bg-info">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Add new user</h2>
+        </div><!--end modal header-->
+
+        <div class="modal-body">
+            <div class="container-fluid">
+                        <ng-form class="panel-body">
+                            <p>Name: </p>
+                            <input type="text" name="name" class="form-control" ng-model="newUser.name" placeholder="Name"  /><br />
+                            <p>Username: </p>
+                            <input type="text" name="name" class="form-control" ng-model="newUser.username" placeholder="Username" /><br />
+                            <p>Password: </p>
+                            <input type="password" name="name" class="form-control" ng-model="newUser.password" placeholder="Password" />   <br />    
+                        </ng-form>
+            </div>
+        </div><!--end modal body-->
+        <div class="modal-footer bg-info">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="createNewUser()">Save</button>
+            <button class="btn btn-default" data-dismiss="modal" ng-click="cancelUser()">Cancel</button>
+        </div><!--end modal footer-->
+    </div><!--end modal content-->
+</div><!--end modal dialog-->

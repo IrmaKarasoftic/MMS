@@ -1,6 +1,6 @@
 ﻿<div class="users" ng-show="!waitUsers">
     <h2><i class="fa fa-users"></i>  Users Management</h2>
-    <div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newCustomerModal" ng-click="loadUsers()"><strong>New User</strong></a></div>
+    <div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newUserModal" ng-click="loadUsers()"><strong>New User</strong></a></div>
     <br /><br />
     <table class="table table-striped" align="right">
         <thead>
@@ -43,4 +43,8 @@
             </div>
         </div>
     </div>
+</div>
+
+<div id="newUserModal" class="modal fade" role="dialog">
+    <div ng-include="'views/modals/newUserModal.html'"></div>
 </div>
