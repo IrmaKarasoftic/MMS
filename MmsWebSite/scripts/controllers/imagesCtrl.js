@@ -43,6 +43,14 @@
         {
             $scope.imageToCompress = image;
         }
+        $scope.cancelImage = function(image)
+        {
+            $scope.newImage = {
+                id: 0,
+                description: "",
+                location: ""
+            }
+        }
 
         $scope.compress = function (image) {
             //kompresovanje
