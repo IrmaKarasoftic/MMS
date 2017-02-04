@@ -1,23 +1,18 @@
-﻿<div class="images" ng-show="!waitImages">
-    <h2><i class="fa fa-users"></i>  Customers Management</h2>
-    <div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newCustomerModal" ng-click="loadImages()"><strong>New Image</strong></a></div>
-    <br /><br />
-    <table class="table table-striped" align="right">
-        <thead>
-            <tr>
-                <th class="col-md-1" style="text-align:center"><h4>ID</h4></th>
-                <th class="col-md-1" style="text-align:center"><h4>DESCRIPTION</h4></th>
-                <th class="col-md-2" style="text-align:center"><h4>LOCATION</h4></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="image in images">
-                <td class="col-md-1" style="text-align:center">{{image.id}}</td>
-                <td class="col-md-2" style="text-align:center">{{image.description}}</td>
-                <td class="col-md-1" style="text-align:center">{{image.location}}</td>
-            </tr>
-        </tbody>
-    </table>
+﻿<h2><i class="fa fa-building"></i>Images Management</h2>
+<br />
+<div ng-show="!waitImages">
+    <div class="companies">
+        <div class="glavniDioSlike">
+            <div class="Slika" ng-repeat="image in images" style="width:30%">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Description: {{image.description}}</h3>
+                </div>
+                <div class="panel-body">
+                    <image ng-src="{{image.location}}"></image>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div ng-show="waitImages">
     <div class="loader">
