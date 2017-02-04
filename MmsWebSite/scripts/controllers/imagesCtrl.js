@@ -52,8 +52,9 @@
             }
         }
 
-        $scope.compress = function (image) {
+        $scope.compress = function (image, ratio) {
             //kompresovanje
+            alert('OK');
         }
     });
 }());
