@@ -45,6 +45,9 @@ namespace MmsApi.Controllers
             {
                 try
                 {
+                    string addToImage = "../images/";
+                    string location = string.Concat(addToImage, image.Location);
+                    image.Location = location;
                     Repository.Insert(Parser.Create(image, Repository.HomeContext()));
                     return Ok(image);
                 }

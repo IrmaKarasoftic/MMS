@@ -28,10 +28,10 @@
             if ($scope.newUser)
                 dataService.create("users", $scope.newUser, function (data) {
                     if (data) {
-                        alert("customer created");
+                        alert("User created");
                     }
                     else
-                        alert("error");
+                        alert("Error");
                 })
         }
 
