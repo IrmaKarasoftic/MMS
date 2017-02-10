@@ -16,7 +16,15 @@ namespace MmsApi.Controllers
         {
             try
             {
-                var images = Repository.Get().ToList().Select(x => Factory.Create(x)).ToList();
+                var images = new List<Image>();
+                Image i1 = new Image() { Id = 1, Description = "Slika1", Location = "../images/image1.jpg" };
+                Image i2 = new Image() { Id = 1, Description = "Slika2", Location = "../images/image2.jpg" };
+                Image i3 = new Image() { Id = 1, Description = "Slika3", Location = "../images/image3.jpg" };
+                images.Add(i1);
+                images.Add(i2);
+                images.Add(i3);
+
+               // var images = Repository.Get().ToList().Select(x => Factory.Create(x)).ToList();
                 return Ok(images);
             }
             catch (Exception)
