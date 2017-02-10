@@ -53,8 +53,13 @@
         }
 
         $scope.compress = function (image, ratio) {
-            //kompresovanje
-            alert('OK');
+            dataService.update("images", image, function (data) {
+                if (data) {
+                    alert("Image added");
+                }
+                else
+                    alert("Error");
+            })
         }
     });
 }());

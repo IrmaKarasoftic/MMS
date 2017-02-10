@@ -8,9 +8,9 @@ namespace MmsApi.Models
 {
     public class EntityParser
     {
-        public User Create(UserModel user, AppContext context)
+        public UserEntity Create(UserModel user, AppContext context)
         {
-            return new User()
+            return new UserEntity()
             {
                 Id = user.Id,
                 Name = user.Name,
@@ -20,9 +20,9 @@ namespace MmsApi.Models
             };
         }
 
-        public Image Create(ImageModel image, AppContext context)
+        public ImageEntity Create(ImageModel image, AppContext context)
         {
-            return new Image()
+            return new ImageEntity()
             {
                 Id = image.Id,
                 Description = image.Description,

@@ -8,7 +8,7 @@ namespace MmsApi.Models
 {
     public class ModelFactory
     {
-        public UserModel Create(User user)
+        public UserModel Create(UserEntity user)
         {
             return new UserModel()
             {
@@ -20,7 +20,7 @@ namespace MmsApi.Models
             };
         }
 
-        public ImageModel Create(Image image)
+        public ImageModel Create(ImageEntity image)
         {
             return new ImageModel()
             {

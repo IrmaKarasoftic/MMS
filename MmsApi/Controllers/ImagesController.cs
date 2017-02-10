@@ -1,25 +1,27 @@
-﻿using MmsApi.Models;
+﻿using MmsApi.Helpers;
+using MmsApi.Models;
 using MmsDb;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
 
 namespace MmsApi.Controllers
 {
-    public class ImagesController : HomeController<Image>
+    public class ImagesController : HomeController<ImageEntity>
     {
-        public ImagesController(Repository<Image> repo) : base(repo) { }
+        public ImagesController(Repository<ImageEntity> repo) : base(repo) { }
 
         public IHttpActionResult Get()
         {
             try
             {
-                var images = new List<Image>();
-                Image i1 = new Image() { Id = 1, Description = "Slika1", Location = "../images/image1.jpg" };
-                Image i2 = new Image() { Id = 1, Description = "Slika2", Location = "../images/image2.jpg" };
-                Image i3 = new Image() { Id = 1, Description = "Slika3", Location = "../images/image3.jpg" };
+                var images = new List<ImageEntity>();
+                ImageEntity i1 = new ImageEntity() { Id = 1, Description = "Slika1", Location = "../images/image1.jpg" };
+                ImageEntity i2 = new ImageEntity() { Id = 1, Description = "Slika2", Location = "../images/image2.jpg" };
+                ImageEntity i3 = new ImageEntity() { Id = 1, Description = "Slika3", Location = "../images/image3.jpg" };
                 images.Add(i1);
                 images.Add(i2);
                 images.Add(i3);
@@ -37,7 +39,7 @@ namespace MmsApi.Controllers
         {
             try
             {
-                Image image = Repository.Get(id);
+                ImageEntity image = Repository.Get(id);
                 if (image != null) return Ok(image);
                 return NotFound();
             }
@@ -71,10 +73,11 @@ namespace MmsApi.Controllers
         {
             if (model != null)
             {
-                Image image = Parser.Create(model, Repository.HomeContext());
+                ImageEntity image = Parser.Create(model, Repository.HomeContext());
                 if (image != null)
                 {
-                    Repository.Update(image, id);
+                    Image newImage = Image.FromFile(image.Location);
+                    ImageHelper.SaveJpeg(image.Location,newImage,30);
                     return Ok(Factory.Create(image));
                 }
                 return NotFound();
@@ -86,7 +89,7 @@ namespace MmsApi.Controllers
         {
             try
             {
-                Image image = Repository.Get(id);
+                ImageEntity image = Repository.Get(id);
                 if (image != null)
                 {
                     Repository.Delete(id);

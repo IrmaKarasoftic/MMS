@@ -10,7 +10,7 @@ namespace MmsDb
     public class AppContext : DbContext
     {
         public AppContext() : base("Database") { }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Image> Images { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
+        public DbSet<ImageEntity> Images { get; set; }
     }
 }

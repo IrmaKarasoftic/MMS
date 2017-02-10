@@ -8,18 +8,18 @@ using System.Web.Http;
 
 namespace MmsApi.Controllers
 {
-    public class UsersController : HomeController<User>
+    public class UsersController : HomeController<UserEntity>
     {
-        public UsersController(Repository<User> repo) : base(repo) { }
+        public UsersController(Repository<UserEntity> repo) : base(repo) { }
 
         public IHttpActionResult Get()
         {
             try
             {
-                User user = new User() { Id = 1, IsAdmin = true, Name = "Amra", Username = "Amra", Password = "Amra" };
-                User user2 = new User() { Id = 1, IsAdmin = true, Name = "Nino", Username = "Nino", Password = "Nino" };
-                User user3 = new User() { Id = 1, IsAdmin = true, Name = "Amir", Username = "Amir", Password = "Amir" };
-                var users = new List<User>();
+                UserEntity user = new UserEntity() { Id = 1, IsAdmin = true, Name = "Amra", Username = "Amra", Password = "Amra" };
+                UserEntity user2 = new UserEntity() { Id = 1, IsAdmin = true, Name = "Nino", Username = "Nino", Password = "Nino" };
+                UserEntity user3 = new UserEntity() { Id = 1, IsAdmin = true, Name = "Amir", Username = "Amir", Password = "Amir" };
+                var users = new List<UserEntity>();
                 users.Add(user);
                 users.Add(user2);
                 users.Add(user3);
@@ -37,7 +37,7 @@ namespace MmsApi.Controllers
         {
             try
             {
-                User user = Repository.Get(id);
+                UserEntity user = Repository.Get(id);
                 if (user != null) return Ok(user);
                 return NotFound();
             }
@@ -68,7 +68,7 @@ namespace MmsApi.Controllers
         {
             if (model != null)
             {
-                User user = Parser.Create(model, Repository.HomeContext());
+                UserEntity user = Parser.Create(model, Repository.HomeContext());
                 if (user != null)
                 {
                     Repository.Update(user, id);
@@ -83,7 +83,7 @@ namespace MmsApi.Controllers
         {
             try
             {
-                User user = Repository.Get(id);
+                UserEntity user = Repository.Get(id);
                 if (user != null)
                 {
                     Repository.Delete(id);

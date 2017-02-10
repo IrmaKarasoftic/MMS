@@ -8,16 +8,16 @@ using System.Web.Http;
 
 namespace MmsApi.Controllers
 {
-    public class LoginController : HomeController<User>
+    public class LoginController : HomeController<UserEntity>
     {
-        public LoginController(Repository<User> repo) : base(repo) { }
+        public LoginController(Repository<UserEntity> repo) : base(repo) { }
         public IHttpActionResult Post(UserModel userModel)
         {
             try
             {
                 AppContext context = new AppContext();
                 LoginModel model = new LoginModel();
-                User user = new User() { Id = 1, IsAdmin = true, Name = "Irma", Username = "Irma", Password = "Irma" };
+                UserEntity user = new UserEntity() { Id = 1, IsAdmin = true, Name = "Irma", Username = "Irma", Password = "Irma" };
                 //User user = new Repository<User>(context).Get().ToList().Where(x => x.Username == userModel.Username).FirstOrDefault();
                 if (user == null)
                 {
