@@ -52,13 +52,15 @@ namespace MmsApi.Controllers
                     image.Location = location;
                     Repository.Insert(Parser.Create(image, Repository.HomeContext()));
                     var loc = AppDomain.CurrentDomain.BaseDirectory;
-                    loc = loc.Substring(0, loc.Length - 8) + "\\MmsWebSite\\images\\" + image.Description+".jpg";
+                    string name = image.Location.Substring(0,image.Location.Length - 4);
+                    name = name.Substring(10, name.Length-10);
+                    loc = loc.Substring(0, loc.Length - 8) + "\\MmsWebSite\\images\\" + name+".jpg";
                     Image newImage = Image.FromFile(loc);
-                    ImageHelper.SaveJpeg(image.Location, newImage, 1, image);
-                    ImageHelper.SaveJpeg(image.Location, newImage, 30, image);
-                    ImageHelper.SaveJpeg(image.Location, newImage, 50, image);
-                    ImageHelper.SaveJpeg(image.Location, newImage, 70, image);
-                    ImageHelper.SaveJpeg(image.Location, newImage, 90, image);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 1, image, name);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 30, image, name);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 50, image, name);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 70, image, name);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 90, image, name);
                     return Ok(image);
                 }
                 catch (Exception ex)

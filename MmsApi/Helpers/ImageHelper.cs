@@ -10,7 +10,7 @@ namespace MmsApi.Helpers
 {
     public class ImageHelper
     {
-        public static void SaveJpeg(string path, Image img, int quality, ImageModel image)
+        public static void SaveJpeg(string path, Image img, int quality, ImageModel image, String name)
         {
             // Encoder parameter for image quality 
             EncoderParameter qualityParam = new EncoderParameter(Encoder.Quality, quality);
@@ -19,7 +19,7 @@ namespace MmsApi.Helpers
 
             EncoderParameters encoderParams = new EncoderParameters(1);
             encoderParams.Param[0] = qualityParam;
-            path = "C:\\Users\\irmaka\\Documents\\Visual Studio 2015\\Projects\\MMS\\MmsWebSite\\images\\"+image.Description+"-"+quality+".jpeg";
+            path = "C:\\Users\\irmaka\\Documents\\Visual Studio 2015\\Projects\\MMS\\MmsWebSite\\images\\"+name+"-"+quality+".jpeg";
             img.Save(path, jpegCodec, encoderParams);
         }
 
