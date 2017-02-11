@@ -59,9 +59,16 @@ namespace MmsApi.Controllers
                     string location = string.Concat(addToImage, image.Location);
                     image.Location = location;
                     Repository.Insert(Parser.Create(image, Repository.HomeContext()));
+
+                    Image newImage = Image.FromFile("C:\\Users\\irmaka\\Documents\\Visual Studio 2015\\Projects\\MMS\\MmsWebSite\\images\\image1.jpg");
+                    ImageHelper.SaveJpeg(image.Location, newImage, 1, image);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 30, image);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 50, image);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 70, image);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 90, image);
                     return Ok(image);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     return BadRequest();
                 }
@@ -73,12 +80,12 @@ namespace MmsApi.Controllers
         {
             if (model != null)
             {
-                ImageEntity image = Parser.Create(model, Repository.HomeContext());
-                if (image != null)
+                ImageModel imageToReturn = new ImageModel();
+                imageToReturn.Description = "Compressed image";
+                imageToReturn.Location = "../images/" + model.Description + "-" + model.Ratio + ".jpeg";
+                if (imageToReturn != null)
                 {
-                    Image newImage = Image.FromFile("C:\\Users\\irmaka\\Documents\\Visual Studio 2015\\Projects\\MMS\\MmsWebSite\\images\\image1.jpg");
-                    ImageHelper.SaveJpeg(image.Location,newImage,30);
-                    return Ok(Factory.Create(image));
+                    return Ok(imageToReturn);
                 }
                 return NotFound();
             }

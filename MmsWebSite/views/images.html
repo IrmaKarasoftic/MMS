@@ -1,51 +1,56 @@
-﻿<div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newImageModal" ng-click="loadImages()"><strong>New Image</strong></a></div>
+﻿<div ng-show="!compressedImage.location">
+    <div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newImageModal" ng-click="loadImages()"><strong>New Image</strong></a></div>
 
-<br />
-<input type="text" class="form-control pull-left" style="width: 320px; margin-bottom: 0;" placeholder="Search Image" ng-model="imagesFilter">
+    <br />
+    <input type="text" class="form-control pull-left" style="width: 320px; margin-bottom: 0;" placeholder="Search Image" ng-model="imagesFilter">
 
-<div ng-show="!waitImages">
-    <div class="companies">
-        <br />
-        <br />
-        <div class="glavniDioSlike">
-            <div class="Slika" ng-repeat="image in images | filter: {description: imagesFilter}" style="width:30%">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Description: {{image.description}}</h3>
+    <div ng-show="!waitImages">
+        <div class="companies">
+            <br />
+            <br />
+            <div class="glavniDioSlike">
+                <div class="Slika" ng-repeat="image in images | filter: {description: imagesFilter}" style="width:30%">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Description: {{image.description}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <image ng-src="{{image.location}}"></image>
+                        <button class="square-btn square-btn-white square-btn-s" title="Compress image" data-toggle="modal" data-target="#compressImageModal" ng-click="setImageToCompress(image)"><em class="fa fa-compress"></em></button>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <image ng-src="{{image.location}}"></image>
-                    <button class="square-btn square-btn-white square-btn-s" title="Compress image" data-toggle="modal" data-target="#compressImageModal" ng-click="setImageToCompress(image)"><em class="fa fa-compress"></em></button>
+            </div>
+        </div>
+    </div>
+    <div ng-show="waitImages">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div ng-show="waitImages">
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-        </div>
+<div ng-show="compressedImage.location">
+    <image ng-src="{{compressedImage.location}}" class="img-responsive"></image>
+</div>
+
+
+    <div id="newImageModal" class="modal fade" role="dialog">
+        <div ng-include="'views/modals/newImageModal.html'"></div>
     </div>
-</div>
-
-
-<div id="newImageModal" class="modal fade" role="dialog">
-    <div ng-include="'views/modals/newImageModal.html'"></div>
-</div>
-<div id="compressImageModal" class="modal fade" role="dialog">
-    <div ng-include="'views/modals/compressImageModal.html'"></div>
-</div>
+    <div id="compressImageModal" class="modal fade" role="dialog">
+        <div ng-include="'views/modals/compressImageModal.html'"></div>
+    </div>

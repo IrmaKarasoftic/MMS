@@ -4,13 +4,21 @@
         $scope.newImage = {
             id: 0,
             description: "",
-            location: ""
+            location: "",
+            ratio:0
         }
 
         $scope.imageToCompress = {
             id:null,
             description: "",
-            location: ""
+            location: "",
+            ratio:0
+        }
+        $scope.compressedImage = {
+            id: null,
+            description: "",
+            location: "",
+            ratio: 0
         }
 
         $scope.loadImages = function () {
@@ -52,12 +60,14 @@
         }
 
         $scope.compress = function (image, ratio) {
-            dataService.update("images", image.id, image, function (data) {
+            image.ratio = ratio;
+            dataService.update("images",image.id, image, function (data) {
                 if (data) {
-                    alert("Image added");
+                    $scope.compressedImage = data;
                 }
-                else
-                    alert("Error");
+                else {
+                    notificationsConfig.error("Error!");
+                }
             })
         }
     });

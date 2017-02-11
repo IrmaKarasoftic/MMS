@@ -26,7 +26,8 @@ namespace MmsApi.Models
             {
                 Id = image.Id,
                 Description = image.Description,
-                Location = image.Location
+                Location = image.Location,
+                Ratio = 0
             };
         }
     }
