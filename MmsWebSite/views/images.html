@@ -21,29 +21,9 @@
             </div>
         </div>
     </div>
-    <div ng-show="waitImages">
-        <div class="loader">
-            <div class="loader-inner">
-                <div class="loader-line-wrap">
-                    <div class="loader-line"></div>
-                </div>
-                <div class="loader-line-wrap">
-                    <div class="loader-line"></div>
-                </div>
-                <div class="loader-line-wrap">
-                    <div class="loader-line"></div>
-                </div>
-                <div class="loader-line-wrap">
-                    <div class="loader-line"></div>
-                </div>
-                <div class="loader-line-wrap">
-                    <div class="loader-line"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <div ng-show="compressedImage.location">
+    <button class="square-btn square-btn-white square-btn-s" ng-click="goBack()"><em class="fa fa-arrow-left"></em>Back</button>
     <image ng-src="{{compressedImage.location}}" class="img-responsive"></image>
 </div>
 

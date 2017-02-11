@@ -40,6 +40,7 @@
             if ($scope.newImage)
                 dataService.create("images", $scope.newImage, function (data) {
                     if (data) {
+                        $scope.loadImages();
                         alert("Image added");
                     }
                     else
@@ -49,6 +50,15 @@
         $scope.setImageToCompress = function(image)
         {
             $scope.imageToCompress = image;
+        }
+
+        $scope.goBack = function () {
+            $scope.compressedImage.location = null;
+        }
+        $scope.setName = function (image) {
+            var name = image.value.substr(0,image.value.length - 5);
+            name = name.substr(12,name.length);
+            $scope.newImage.description = name;
         }
         $scope.cancelImage = function(image)
         {
