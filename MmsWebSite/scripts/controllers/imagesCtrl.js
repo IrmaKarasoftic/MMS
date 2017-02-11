@@ -1,6 +1,5 @@
 ﻿(function () {
     var MmsWebSite = angular.module('MmsWebSite');
-
     MmsWebSite.controller('imagesController', function ($scope, dataService) {
         $scope.newImage = {
             id: 0,
@@ -9,7 +8,7 @@
         }
 
         $scope.imageToCompress = {
-            id: 0,
+            id:null,
             description: "",
             location: ""
         }
@@ -53,7 +52,7 @@
         }
 
         $scope.compress = function (image, ratio) {
-            dataService.update("images", image, function (data) {
+            dataService.update("images", image.id, image, function (data) {
                 if (data) {
                     alert("Image added");
                 }

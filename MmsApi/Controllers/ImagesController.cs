@@ -69,14 +69,14 @@ namespace MmsApi.Controllers
             return NotFound();
         }
 
-        public IHttpActionResult Put(ImageModel model, int id)
+        public IHttpActionResult Put(int id, ImageModel model)
         {
             if (model != null)
             {
                 ImageEntity image = Parser.Create(model, Repository.HomeContext());
                 if (image != null)
                 {
-                    Image newImage = Image.FromFile(image.Location);
+                    Image newImage = Image.FromFile("C:\\Users\\irmaka\\Documents\\Visual Studio 2015\\Projects\\MMS\\MmsWebSite\\images\\image1.jpg");
                     ImageHelper.SaveJpeg(image.Location,newImage,30);
                     return Ok(Factory.Create(image));
                 }

@@ -11,10 +11,6 @@ namespace MmsApi.Helpers
     {
         public static void SaveJpeg(string path, Image img, int quality)
         {
-            if (quality < 0 || quality > 100)
-                throw new ArgumentOutOfRangeException("quality must be between 0 and 100.");
-
-
             // Encoder parameter for image quality 
             EncoderParameter qualityParam = new EncoderParameter(Encoder.Quality, quality);
             // Jpeg image codec 
