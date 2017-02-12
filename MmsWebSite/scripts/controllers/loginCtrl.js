@@ -9,17 +9,19 @@
             name: "",
             isAdmin: false
         }
-        $rootScope.loggedIn = false;
+        $rootScope.foo = false;
+        $scope.loggedIn = false;
+        $scope.isAdmin = false;
         $scope.checkLogin = function () {
                 dataService.create("login", $scope.login, function (data) {
                     if (data) {
-                        if (data.isAdmin) $rootScope.isAdmin = true;
-                        else $rootScope.isAdmin = false;
-                        $rootScope.loggedIn = true;
-                        $location.href = "#/users";
+                        if (data.isAdmin) $scope.isAdmin = true;
+                        else $scope.isAdmin = false;
+                        $scope.loggedIn = true;
+                        
                     }
                     else {
-                        $rootScope.loggedIn = false;
+                        $scope.loggedIn = false;
                         alert("Login failed");
                     }
                 })

@@ -44,9 +44,8 @@
                 <nav class="navbar navbar-inverse navbar-fixed-top">
                     <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
                     <ul class="nav navbar-nav">
-                        <li><a href="#/login"><strong>Login</strong></a></li>
-                        <li><a href="#/users"><strong>Users</strong></a></li>
-                        <li><a href="#/images"><strong>Images</strong></a></li>
+                        <li><a ng-show="$scope.loggedIn && $scope.isAdmin" href="#/users"><strong>Users</strong></a></li>
+                        <li><a ng-show="$scope.loggedIn && !$scope.isAdmin" href="#/images"><strong>Images</strong></a></li>
                         
                     </ul>
                 </nav>
