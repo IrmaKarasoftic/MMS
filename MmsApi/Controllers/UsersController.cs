@@ -16,15 +16,7 @@ namespace MmsApi.Controllers
         {
             try
             {
-                UserEntity user = new UserEntity() { Id = 1, IsAdmin = true, Name = "Amra", Username = "Amra", Password = "Amra" };
-                UserEntity user2 = new UserEntity() { Id = 1, IsAdmin = true, Name = "Nino", Username = "Nino", Password = "Nino" };
-                UserEntity user3 = new UserEntity() { Id = 1, IsAdmin = true, Name = "Amir", Username = "Amir", Password = "Amir" };
-                var users = new List<UserEntity>();
-                users.Add(user);
-                users.Add(user2);
-                users.Add(user3);
-
-                //var users = Repository.Get().ToList().Select(x => Factory.Create(x)).ToList();
+                var users = Repository.Get().ToList().Select(x => Factory.Create(x)).ToList();
                 return Ok(users);
             }
             catch (Exception)

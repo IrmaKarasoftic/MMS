@@ -25,7 +25,7 @@
                 $location.url('/login');
             }
         }
-        //$scope.isLoggedIn();
+        $scope.isLoggedIn();
         $scope.loadImages = function () {
             $scope.waitImages = true;
             dataService.list("images", function (data) {

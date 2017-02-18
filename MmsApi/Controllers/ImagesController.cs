@@ -57,6 +57,8 @@ namespace MmsApi.Controllers
                     loc = loc.Substring(0, loc.Length - 8) + "\\MmsWebSite\\images\\" + name+".jpg";
                     Image newImage = Image.FromFile(loc);
                     ImageHelper.SaveJpeg(image.Location, newImage, 1, image, name);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 5, image, name);
+                    ImageHelper.SaveJpeg(image.Location, newImage, 10, image, name);
                     ImageHelper.SaveJpeg(image.Location, newImage, 30, image, name);
                     ImageHelper.SaveJpeg(image.Location, newImage, 50, image, name);
                     ImageHelper.SaveJpeg(image.Location, newImage, 70, image, name);
@@ -77,8 +79,9 @@ namespace MmsApi.Controllers
             {
                 ImageModel imageToReturn = new ImageModel();
                 imageToReturn.Description = "Compressed image";
-                string loc = model.Location.Substring(0, model.Location.Length - 4);
-                imageToReturn.Location = loc + "-" + model.Ratio + ".jpeg";
+                string loc = model.Location.Substring(0, 10)+"compressed/";
+                string name = model.Location.Substring(10, model.Location.Length-14);
+                imageToReturn.Location = loc + name + "-" + model.Ratio + ".jpeg";
                 if (imageToReturn != null)
                 {
                     return Ok(imageToReturn);

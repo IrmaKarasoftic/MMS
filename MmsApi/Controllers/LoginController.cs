@@ -17,7 +17,6 @@ namespace MmsApi.Controllers
             {
                 AppContext context = new AppContext();
                 LoginModel model = new LoginModel();
-                //UserEntity user = new UserEntity() { Id = 1, IsAdmin = true, Name = "Irma", Username = "Irma", Password = "Irma" };
                 UserEntity user = new Repository<UserEntity>(context).Get().ToList().Where(x => x.Username == userModel.Username).FirstOrDefault();
                 if (user == null)
                 {

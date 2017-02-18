@@ -19,7 +19,7 @@ namespace MmsApi.Helpers
 
             EncoderParameters encoderParams = new EncoderParameters(1);
             encoderParams.Param[0] = qualityParam;
-            path = "C:\\Users\\irmaka\\Documents\\Visual Studio 2015\\Projects\\MMS\\MmsWebSite\\images\\"+name+"-"+quality+".jpeg";
+            path = "C:\\Users\\irmaka\\Documents\\Visual Studio 2015\\Projects\\MMS\\MmsWebSite\\images\\compressed\\"+name+"-"+quality+".jpeg";
             img.Save(path, jpegCodec, encoderParams);
         }
 

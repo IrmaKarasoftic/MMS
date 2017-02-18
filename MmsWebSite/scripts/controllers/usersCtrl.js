@@ -37,6 +37,7 @@
             if ($scope.newUser)
                 dataService.create("users", $scope.newUser, function (data) {
                     if (data) {
+                        $scope.loadUsers();
                         alert("User created");
                     }
                     else
