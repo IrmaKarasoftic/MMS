@@ -7,7 +7,6 @@
             location: "",
             ratio:0
         }
-
         $scope.imageToCompress = {
             id:null,
             description: "",
@@ -20,7 +19,13 @@
             location: "",
             ratio: 0
         }
-
+        $scope.isLoggedIn = function() {
+            if (!$rootScope.loggedIn) {
+                alert('You are not logged in!');
+                $location.url('/login');
+            }
+        }
+        //$scope.isLoggedIn();
         $scope.loadImages = function () {
             $scope.waitImages = true;
             dataService.list("images", function (data) {

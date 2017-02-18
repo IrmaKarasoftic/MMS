@@ -44,9 +44,9 @@
                 <nav class="navbar navbar-inverse navbar-fixed-top">
                     <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
                     <ul class="nav navbar-nav">
-                        <li><a ng-show="$rootScope.loggedIn && $rootScope.isAdmin" href="#/users"><strong>Users</strong></a></li>
-                        <li><a ng-show="$rootScope.loggedIn && !$rootScope.isAdmin" href="#/images"><strong>Images</strong></a></li>
-                        
+                        <li><a ng-show="loggedIn && isAdmin" href="#/users"><strong>Users</strong></a></li>
+                        <li><a ng-show="loggedIn" href="#/images"><strong>Images</strong></a></li>
+                        <li><a ng-show="loggedIn" href="#/login" ng-click="loggedIn=false; isAdmin=false; console.log(loggedIn, isAdmin);"><strong>Logout</strong></a></li>                    
                     </ul>
                 </nav>
                 <!-- ANGULAR DYNAMIC CONTENT -->

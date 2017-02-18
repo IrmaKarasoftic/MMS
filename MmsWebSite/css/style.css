@@ -1,9 +1,13 @@
-﻿.Slika {
+﻿
+
+.Slika {
 	height:30%;
 	width:30%;
 	margin-left: auto;
 	margin-right: auto;
 	display: inline-block;
+    outline:2px solid grey;
+    margin:1%;
 }
 .Slika a {
 	position: relative;
@@ -28,6 +32,8 @@
 }
 
 .Slika img {
+    padding:10px;
+
 	transition: 0.5s ease-out;
 	-moz-transition: 0.5s ease-out; /* Firefox 4 */
 	-webkit-transition:  0.5s ease-out; /* Safari and Chrome */

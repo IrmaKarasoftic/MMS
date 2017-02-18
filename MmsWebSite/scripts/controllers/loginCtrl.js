@@ -17,7 +17,7 @@
                         if (data.isAdmin) $rootScope.isAdmin = true;
                         else $rootScope.isAdmin = false;
                         $rootScope.loggedIn = true;
-                        
+                        $location.url('/images');
                     }
                     else {
                         $rootScope.loggedIn = false;

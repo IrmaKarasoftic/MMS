@@ -9,6 +9,13 @@
             name: "",
             isAdmin: false
         }
+        $scope.isLoggedIn = function () {
+            if (!$rootScope.loggedIn) {
+                alert('You are not logged in!');
+                $location.url('/login');
+            }
+        }
+        $scope.isLoggedIn();
         $scope.loadUsers = function () {
             $scope.waitUsers = true;
             dataService.list("users", function (data) {

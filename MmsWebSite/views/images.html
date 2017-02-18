@@ -1,10 +1,12 @@
-﻿<div ng-show="$rootScope.loggedIn">
+﻿<div ng-show="loggedIn">
     <div ng-show="!compressedImage.location">
-        <div class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newImageModal" ng-click="loadImages()"><strong>New Image</strong></a></div>
+        <div ng-show="isAdmin" class="pull-right"><a class="btn btn-primary" data-toggle="modal" data-target="#newImageModal" ng-click="loadImages()"><strong>New Image</strong></a></div>
 
         <br />
         <input type="text" class="form-control pull-left" style="width: 320px; margin-bottom: 0;" placeholder="Search Image" ng-model="imagesFilter">
 
+        <br />
+        <br />
         <div ng-show="!waitImages">
             <div class="companies">
                 <br />
