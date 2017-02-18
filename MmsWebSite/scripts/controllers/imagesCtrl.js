@@ -1,6 +1,6 @@
 ﻿(function () {
     var MmsWebSite = angular.module('MmsWebSite');
-    MmsWebSite.controller('imagesController', function ($scope, dataService) {
+    MmsWebSite.controller('imagesController',  ['$rootScope', '$scope', '$location', 'dataService', function ($rootScope, $scope, $location, dataService)  {
         $scope.newImage = {
             id: 0,
             description: "",
@@ -32,6 +32,8 @@
                     notificationsConfig.error("Error!");
                 }
             })
+            console.log($rootScope.isAdmin);
+            console.log($rootScope.loggedIn);
         };
         $scope.loadImages();
 
@@ -80,5 +82,5 @@
                 }
             })
         }
-    });
+    }]);
 }());

@@ -9,22 +9,27 @@
             name: "",
             isAdmin: false
         }
-        $rootScope.foo = false;
-        $scope.loggedIn = false;
-        $scope.isAdmin = false;
-        $scope.checkLogin = function () {
+        $rootScope.loggedIn = false;
+        $rootScope.isAdmin = false;
+        $rootScope.checkLogin = function () {
                 dataService.create("login", $scope.login, function (data) {
                     if (data) {
-                        if (data.isAdmin) $scope.isAdmin = true;
-                        else $scope.isAdmin = false;
-                        $scope.loggedIn = true;
+                        if (data.isAdmin) $rootScope.isAdmin = true;
+                        else $rootScope.isAdmin = false;
+                        $rootScope.loggedIn = true;
                         
                     }
                     else {
-                        $scope.loggedIn = false;
+                        $rootScope.loggedIn = false;
                         alert("Login failed");
                     }
                 })
-            }
+                console.log($rootScope.isAdmin);
+                console.log($rootScope.loggedIn);
+        }
+
+        console.log($rootScope.isAdmin);
+        console.log($rootScope.loggedIn);
     }]);
+
 }());

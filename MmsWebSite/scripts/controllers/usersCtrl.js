@@ -1,7 +1,7 @@
 ﻿(function () {
     var MmsWebSite = angular.module('MmsWebSite');
 
-    MmsWebSite.controller('usersController', function ($scope, dataService) {
+    MmsWebSite.controller('usersController',  ['$rootScope', '$scope', '$location', 'dataService', function ($rootScope, $scope, $location, dataService) {
         $scope.newUser = {
             id: 0,
             username: "",
@@ -20,6 +20,8 @@
                     notificationsConfig.error("Error!");
                 }
             })
+            console.log($rootScope.isAdmin);
+            console.log($rootScope.loggedIn);
         };
 
         $scope.loadUsers();
@@ -35,5 +37,5 @@
                 })
         }
 
-    });
+    }]);
 }());
