@@ -6,19 +6,23 @@
         <table class="table table-striped" align="right">
             <thead>
                 <tr>
-                    <th class="col-md-1" style="text-align:center"><h4>ID</h4></th>
-                    <th class="col-md-1" style="text-align:center"><h4>NAME</h4></th>
-                    <th class="col-md-2" style="text-align:center"><h4>USERNAME</h4></th>
-                    <th class="col-md-1" style="text-align:center"><h4>IS ADMIN</h4></th>
+                    <th class="col-md-2" style="text-align:center"><h4>ID</h4></th>
+                    <th class="col-md-3" style="text-align:center"><h4>NAME</h4></th>
+                    <th class="col-md-3" style="text-align:center"><h4>USERNAME</h4></th>
+                    <th class="col-md-2" style="text-align:center"><h4>IS ADMIN</h4></th>
+                    <th class="col-md-2" style="text-align:center"><h4>DELETE</h4></th>
+
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="user in users">
-                    <td class="col-md-1" style="text-align:center">{{user.id}}</td>
-                    <td class="col-md-2" style="text-align:center">{{user.name}}</td>
-                    <td class="col-md-1" style="text-align:center">{{user.username}}</td>
-                    <td class="col-md-1" style="text-align:center">{{user.isAdmin}}</td>
+                    <td class="col-md-2" style="text-align:center">{{user.id}}</td>
+                    <td class="col-md-3" style="text-align:center">{{user.name}}</td>
+                    <td class="col-md-3" style="text-align:center">{{user.username}}</td>
+                    <td class="col-md-2" style="text-align:center">{{user.isAdmin}}</td>
+                    <td class="col-md-1" style="text-align:center"><button ng-show="isAdmin" class="btn btn-sm btn-danger" ng-click="deleteUser(user)">Delete</button></td>
                 </tr>
+
             </tbody>
         </table>
     </div>

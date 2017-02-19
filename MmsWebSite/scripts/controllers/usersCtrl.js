@@ -45,5 +45,16 @@
                 })
         }
 
+        $scope.deleteUser = function (user) {
+            dataService.remove("users", user.id, function (data) {
+                if (data) {
+                    $scope.loadUsers();
+                    alert("User deleted");
+                }
+                else
+                    alert("User not deleted");
+            });
+        };
+
     }]);
 }());

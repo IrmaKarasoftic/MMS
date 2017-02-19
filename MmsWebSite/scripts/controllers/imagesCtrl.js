@@ -76,6 +76,17 @@
             }
         }
 
+        $scope.deleteImage = function (image) {
+            dataService.remove("images", image.id, function (data) {
+                if (data) {
+                    $scope.loadImages();
+                    alert("Image deleted");
+                }
+                else
+                    alert("Image not deleted");
+            });
+        };
+
         $scope.compress = function (image, ratio) {
             image.ratio = ratio;
             dataService.update("images",image.id, image, function (data) {
@@ -87,5 +98,7 @@
                 }
             })
         }
+
+
     }]);
 }());

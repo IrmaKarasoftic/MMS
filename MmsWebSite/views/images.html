@@ -19,6 +19,7 @@
                         <div class="panel-body">
                             <image ng-src="{{image.location}}"></image>
                             <button class="square-btn square-btn-white square-btn-s" title="Compress image" data-toggle="modal" data-target="#compressImageModal" ng-click="setImageToCompress(image)"><em class="fa fa-compress"></em></button>
+                            <button ng-show="isAdmin" class="btn btn-sm btn-danger pull-right" ng-click="deleteImage(image)">Delete</button>
                         </div>
                     </div>
                 </div>
